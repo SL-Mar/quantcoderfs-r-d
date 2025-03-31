@@ -27,7 +27,8 @@
       background-color: var(--nav-bg);
       display: flex;
       justify-content: center;
-      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
       padding: 1rem 2rem;
       border-bottom: 1px solid var(--border-color);
     }
@@ -35,7 +36,6 @@
     nav a {
       color: var(--text-color);
       text-decoration: none;
-      margin: 0 1rem;
       font-size: 0.95rem;
     }
 
@@ -47,16 +47,17 @@
       max-width: 1100px;
       margin: 3rem auto;
       padding: 0 1rem;
-      text-align: center;
     }
 
     h1 {
       font-size: 2.5rem;
+      text-align: center;
       margin-bottom: 0.5rem;
       color: var(--highlight);
     }
 
     p.subtitle {
+      text-align: center;
       font-size: 1.1rem;
       color: #8b949e;
       margin-bottom: 2rem;
@@ -64,9 +65,10 @@
 
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(2, 1fr); /* Fixed 2x2 layout */
+      gap: 2rem;
+      margin: 2rem auto;
+      max-width: 900px;
     }
 
     .card {
@@ -74,7 +76,6 @@
       border: 1px solid var(--border-color);
       padding: 1.5rem;
       border-radius: 8px;
-      text-align: left;
     }
 
     .card h3 {
@@ -87,10 +88,16 @@
       line-height: 1.5;
     }
 
-    .card a {
-      color: var(--highlight);
-      text-decoration: none;
-      font-weight: bold;
+    h2 {
+      margin-top: 3rem;
+      font-size: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      line-height: 1.7;
     }
 
     .footer {
@@ -101,6 +108,15 @@
       border-top: 1px solid var(--border-color);
       margin-top: 4rem;
     }
+
+    a {
+      color: var(--highlight);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -110,7 +126,7 @@
     <a href="https://medium.com/@sl_mar/quantcoder-fs-development-log-1b3b7e8c23de" target="_blank">Devlog</a>
     <a href="https://medium.com/@sl_mar/quantcoder-fs-documentation-6fc79915e287" target="_blank">Documentation</a>
     <a href="https://medium.com/ai-advances/towards-automating-quantitative-finance-research-c868a2a6477e" target="_blank">Article</a>
-    <a href="https://github.com/SL-Mar/QuantCoder_FS" target="_blank">GitHub</a>
+    <a href="https://github.com/SL-Mar/QuantCoder-FS" target="_blank">GitHub</a>
     <a href="mailto:smr.laignel@gmail.com">Contact</a>
   </nav>
 
@@ -122,22 +138,30 @@
 
     <div class="features">
       <div class="card">
-        <h3>📊 Chat with Fundamentals</h3>
+        <h3>Chat with Fundamentals</h3>
         <p>Access fundamental data and company news through an AI-powered chat interface connected to EODHD.</p>
       </div>
       <div class="card">
-        <h3>🔎 Search Articles</h3>
+        <h3>Search Articles</h3>
         <p>Find and retrieve academic finance articles via CrossRef and other APIs, ready for summarization and coding.</p>
       </div>
       <div class="card">
-        <h3>🧠 Summary Generation</h3>
+        <h3>Summary Generation</h3>
         <p>Summarize academic papers, reports, or transcripts into structured, concise insights using LLMs.</p>
       </div>
       <div class="card">
-        <h3>💻 Code Generation</h3>
+        <h3>Code Generation</h3>
         <p>Turn summaries into executable Python code compatible with QuantConnect, with iterative LLM refinement.</p>
       </div>
     </div>
+
+    <h2>Development Roadmap</h2>
+    <ul>
+      <li><strong>Q2 2025</strong> – Fundamental alpha extraction (Piotroski F-Score, valuation models)</li>
+      <li><strong>Q3 2025</strong> – Cloud deployment for scalable access</li>
+      <li><strong>Q3 2025</strong> – Integration with QuantConnect's LEAN Engine</li>
+      <li><strong>Q4 2025</strong> – Integration with Notion for research and strategy management</li>
+    </ul>
   </div>
 
   <div class="footer">

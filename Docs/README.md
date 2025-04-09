@@ -8,7 +8,7 @@
 **QuantCoder FS** is a full-stack AI-powered research platform designed to accelerate and automate key workflows in quantitative finance. It coordinates LLM agents across a modular architecture, enabling:
 
 - PDF Summarization – extract structured insights from academic or financial documents  
-- Fundamental Data Analysis – parse and interpret financial fundamentals  
+- Fundamental Data Analysis – parse and interpret financial fundamentals provided by EODHD APIs  
 - Algorithmic Strategy Generation – turn insights into QuantConnect-ready trading code  
 - Article Search – find and rank academic or industry papers relevant to your query
 
@@ -33,8 +33,6 @@ This repository will serve as a workspace for:
 ### ▶ First Demo Video (April 8)
 
 [Watch the first demo video on Substack](https://quantcoderfs.substack.com/p/first-demo-video-of-the-application)
-
-![First Demo – Summary and Fundamentals Workflows](/Docs/Demo1_picture.jpg)
 
 ---
 

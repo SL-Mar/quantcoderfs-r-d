@@ -30,9 +30,9 @@ This repository will serve as a workspace for:
 - Prototyping and testing new features  
 - Linking documentation and platform components
 
-### ▶ First Demo Video (April 8)
+### ▶ Full Demo Video (April 15)
 
-[Watch the first demo video on Substack](https://quantcoderfs.substack.com/p/first-demo-video-of-the-application)
+[Watch the full demo video on Substack](https://quantcoderfs.substack.com/p/full-demo-quantcoder-fs-ai-quant)
 
 ---
 

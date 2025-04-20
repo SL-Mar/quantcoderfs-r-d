@@ -175,6 +175,57 @@
   </div>
 </div>
 
+<div class="section">
+  <h2>Workflow Details</h2>
+
+  <div class="card">
+    <h3 class="green">Chat with Fundamentals <span style="float:right; font-weight:normal;">v1.0 — 15 April 2025</span></h3>
+    <p>Transforms a natural language financial query into a professional research note. The flow orchestrates structured API calls and LLMs to analyze metrics, price history, and news.</p>
+    <ul>
+      <li>Interpret the user query to identify tickers, data needs, and date ranges.</li>
+      <li>Fetch selected financial KPIs from EODHD fundamentals API.</li>
+      <li>Retrieve recent OHLCV data (default 3-month history).</li>
+      <li>Fetch and filter recent news headlines per ticker.</li>
+      <li>Use an LLM to write an executive summary based on all collected inputs.</li>
+      <li>Return a structured object with tickers, metrics, quotes, news, and summary.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="orange">Search Articles <span style="float:right; font-weight:normal;">v1.0 — 15 April 2025</span></h3>
+    <p>Finds academic papers by expanding the user query, inferring arXiv categories, and pulling from CrossRef and arXiv using LLM-enhanced agents.</p>
+    <ul>
+      <li>Extract core terms, expanded terms, and category hints from user query.</li>
+      <li>Query arXiv and CrossRef using structured parameters.</li>
+      <li>Return matching articles with title, abstract, link, and source.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="blue">Summary Generation <span style="float:right; font-weight:normal;">v1.0 — 15 April 2025</span></h3>
+    <p>Analyzes full academic articles to produce detailed, structured summaries in Markdown format, suitable for research documentation and knowledge sharing.</p>
+    <ul>
+      <li>Extract detailed insights from all sections of the paper.</li>
+      <li>Organize key points by section with labeled bullet lists.</li>
+      <li>Refine structure into well-formatted Markdown with clear headings.</li>
+      <li>Preserve technical depth while improving clarity.</li>
+      <li>Return a Markdown string with the paper’s conceptual structure.</li>
+      <li>Export summaries to Notion for further refinement.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 class="purple">Code Generation <span style="float:right; font-weight:normal;">v0.4 — 15 April 2025</span></h3>
+    <p>Translates a plain-text trading strategy into validated Python code for QuantConnect. Uses multiple agents for parsing, generation, and syntax validation.</p>
+    <ul>
+      <li>Parse the strategy into structured logic: indicators, signals, alpha models.</li>
+      <li>Generate Python code for QuantConnect’s LEAN Engine.</li>
+      <li>Run AST-based syntax validation and patch compatibility issues.</li>
+      <li>Ensure code defines Initialize(), OnData(), and correct API usage.</li>
+      <li>Return final Python code with filename and metadata.</li>
+    </ul>
+  </div>
+</div>
 
     <div class="roadmap">
       <h2>Development Roadmap</h2>

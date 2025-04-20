@@ -43,15 +43,10 @@
       color: var(--highlight);
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-
     h1 {
       font-size: 2.5rem;
       text-align: center;
+      margin-top: 2rem;
       margin-bottom: 0.5rem;
       color: var(--highlight);
     }
@@ -60,15 +55,16 @@
       text-align: center;
       font-size: 1.1rem;
       color: #8b949e;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
 
     .features {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      margin: 2rem auto;
-      max-width: 900px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      padding: 0 1rem;
     }
 
     .card {
@@ -83,14 +79,39 @@
       font-size: 1.2rem;
     }
 
-    .green { color: #3fb950; }   /* Chat with Fundamentals */
-    .orange { color: #f78166; }  /* Search Articles */
-    .blue { color: #58a6ff; }    /* Summary Generation */
-    .purple { color: #bc8cff; }  /* Code Generation */
+    .green { color: #3fb950; }
+    .orange { color: #f78166; }
+    .blue { color: #58a6ff; }
+    .purple { color: #bc8cff; }
 
     .card p {
       font-size: 0.95rem;
       line-height: 1.5;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem 4rem;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      color: var(--highlight);
+    }
+
+    .card ul {
+      padding-left: 1.2rem;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+    }
+
+    .card ul li::marker {
+      color: var(--highlight);
     }
 
     .roadmap {
@@ -150,92 +171,90 @@
     <a href="mailto:smr.laignel@gmail.com">Contact</a>
   </nav>
 
+  <h1>Welcome to QuantCoder FS</h1>
+  <p class="subtitle">
+    Researching and prototyping trading strategies using financial data and agentic AI.
+  </p>
 
-<h1>Welcome to QuantCoder FS</h1>
-<p class="subtitle">
-  Researching and prototyping trading strategies using financial data and agentic AI. 
-</p>
-
-<div class="features">
-  <div class="card">
-    <h3 class="green">Chat with Fundamentals</h3>
-    <p>Analyze company fundamentals and news through a chat interface backed by EODHD. </p>
-  </div>
-  <div class="card">
-    <h3 class="orange">Search Articles</h3>
-    <p>Find and retrieve academic articles using CrossRef and other APIs. </p>
-  </div>
-  <div class="card">
-    <h3 class="blue">Summary Generation</h3>
-    <p>Condense research papers, reports, or transcripts into clear, structured summaries using LLMs. </p>
-  </div>
-  <div class="card">
-    <h3 class="purple">Code Generation</h3>
-    <p>Convert ideas into Python code for QuantConnect with an AI pair-coding assistant. </p>
-  </div>
-</div>
-
-<div class="section">
-  <h2>Workflow Details</h2>
-
-  <div class="card">
-    <h3 class="green">Chat with Fundamentals <span style="float:right; font-weight:normal;">v1.0 — 15 April 2025</span></h3>
-    <p>Transforms a natural language financial query into a professional research note. The flow orchestrates structured API calls and LLMs to analyze metrics, price history, and news.</p>
-    <ul>
-      <li>Interpret the user query to identify tickers, data needs, and date ranges.</li>
-      <li>Fetch selected financial KPIs from EODHD fundamentals API.</li>
-      <li>Retrieve recent OHLCV data (default 3-month history).</li>
-      <li>Fetch and filter recent news headlines per ticker.</li>
-      <li>Use an LLM to write an executive summary based on all collected inputs.</li>
-      <li>Return a structured object with tickers, metrics, quotes, news, and summary.</li>
-    </ul>
+  <div class="features">
+    <div class="card">
+      <h3 class="green">Chat with Fundamentals</h3>
+      <p>Analyze company fundamentals and financial news through a conversational interface powered by EODHD APIs.</p>
+    </div>
+    <div class="card">
+      <h3 class="orange">Search Articles</h3>
+      <p>Query academic literature using CrossRef and arXiv APIs, enhanced by LLM-driven keyword expansion.</p>
+    </div>
+    <div class="card">
+      <h3 class="blue">Summary Generation</h3>
+      <p>Transform academic papers into structured, Markdown-formatted summaries suitable for research workflows.</p>
+    </div>
+    <div class="card">
+      <h3 class="purple">Code Generation</h3>
+      <p>Convert plain-text strategy ideas into validated QuantConnect-ready Python code using AI agents.</p>
+    </div>
   </div>
 
-  <div class="card">
-    <h3 class="orange">Search Articles <span style="float:right; font-weight:normal;">v1.0 — 15 April 2025</span></h3>
-    <p>Finds academic papers by expanding the user query, inferring arXiv categories, and pulling from CrossRef and arXiv using LLM-enhanced agents.</p>
-    <ul>
-      <li>Extract core terms, expanded terms, and category hints from user query.</li>
-      <li>Query arXiv and CrossRef using structured parameters.</li>
-      <li>Return matching articles with title, abstract, link, and source.</li>
-    </ul>
-  </div>
+  <div class="section">
+    <h2>Description of workflows as implemented to date / 20 April 2025</h2>
 
-  <div class="card">
-    <h3 class="blue">Summary Generation <span style="float:right; font-weight:normal;">v1.0 — 15 April 2025</span></h3>
-    <p>Analyzes full academic articles to produce detailed, structured summaries in Markdown format, suitable for research documentation and knowledge sharing.</p>
-    <ul>
-      <li>Extract detailed insights from all sections of the paper.</li>
-      <li>Organize key points by section with labeled bullet lists.</li>
-      <li>Refine structure into well-formatted Markdown with clear headings.</li>
-      <li>Preserve technical depth while improving clarity.</li>
-      <li>Return a Markdown string with the paper’s conceptual structure.</li>
-      <li>Export summaries to Notion for further refinement.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3 class="purple">Code Generation <span style="float:right; font-weight:normal;">v0.4 — 15 April 2025</span></h3>
-    <p>Translates a plain-text trading strategy into validated Python code for QuantConnect. Uses multiple agents for parsing, generation, and syntax validation.</p>
-    <ul>
-      <li>Parse the strategy into structured logic: indicators, signals, alpha models.</li>
-      <li>Generate Python code for QuantConnect’s LEAN Engine.</li>
-      <li>Run AST-based syntax validation and patch compatibility issues.</li>
-      <li>Ensure code defines Initialize(), OnData(), and correct API usage.</li>
-      <li>Return final Python code with filename and metadata.</li>
-    </ul>
-  </div>
-</div>
-
-    <div class="roadmap">
-      <h2>Development Roadmap</h2>
+    <div class="card">
+      <h3 class="green">Chat with Fundamentals <span style="float:right; font-weight:normal;">v1.0 — 15 April 2025</span></h3>
+      <p>Transforms a natural language financial query into a professional research note. The flow orchestrates structured API calls and LLMs to analyze metrics, price history, and news.</p>
       <ul>
-        <li><strong>Q2 2025</strong> – Integration with EODHD APIs</li>
-        <li><strong>Q3 2025</strong> – Cloud deployment </li>
-        <li><strong>Q3 2025</strong> – Integration with QuantConnect's LEAN Engine</li>
-        <li><strong>Q4 2025</strong> – Integration with Notion for research and strategy management</li>
+        <li>Interpret the user query to identify tickers, data needs, and date ranges.</li>
+        <li>Fetch selected financial KPIs from EODHD fundamentals API.</li>
+        <li>Retrieve recent OHLCV data (default 3-month history).</li>
+        <li>Fetch and filter recent news headlines per ticker.</li>
+        <li>Use an LLM to write an executive summary based on all collected inputs.</li>
+        <li>Return a structured object with tickers, metrics, quotes, news, and summary.</li>
       </ul>
     </div>
+
+    <div class="card" style="margin-top: 2rem;">
+      <h3 class="orange">Search Articles <span style="float:right; font-weight:normal;">v1.0 — 15 April 2025</span></h3>
+      <p>Finds academic papers by expanding the user query, inferring arXiv categories, and pulling from CrossRef and arXiv using LLM-enhanced agents.</p>
+      <ul>
+        <li>Extract core terms, expanded terms, and category hints from user query.</li>
+        <li>Query arXiv and CrossRef using structured parameters.</li>
+        <li>Return matching articles with title, abstract, link, and source.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-top: 2rem;">
+      <h3 class="blue">Summary Generation <span style="float:right; font-weight:normal;">v1.0 — 15 April 2025</span></h3>
+      <p>Analyzes full academic articles to produce detailed, structured summaries in Markdown format, suitable for research documentation and knowledge sharing.</p>
+      <ul>
+        <li>Extract detailed insights from all sections of the paper.</li>
+        <li>Organize key points by section with labeled bullet lists.</li>
+        <li>Refine structure into well-formatted Markdown with clear headings.</li>
+        <li>Preserve technical depth while improving clarity.</li>
+        <li>Return a Markdown string with the paper’s conceptual structure.</li>
+        <li>Export summaries to Notion for further refinement.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-top: 2rem;">
+      <h3 class="purple">Code Generation <span style="float:right; font-weight:normal;">v0.4 — 15 April 2025</span></h3>
+      <p>Translates a plain-text trading strategy into validated Python code for QuantConnect. Uses multiple agents for parsing, generation, and syntax validation.</p>
+      <ul>
+        <li>Parse the strategy into structured logic: indicators, signals, alpha models.</li>
+        <li>Generate Python code for QuantConnect’s LEAN Engine.</li>
+        <li>Run AST-based syntax validation and patch compatibility issues.</li>
+        <li>Ensure code defines Initialize(), OnData(), and correct API usage.</li>
+        <li>Return final Python code with filename and metadata.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="roadmap">
+    <h2>Development Roadmap</h2>
+    <ul>
+      <li><strong>Q2 2025</strong> – Integration with EODHD APIs</li>
+      <li><strong>Q3 2025</strong> – Cloud deployment</li>
+      <li><strong>Q3 2025</strong> – Integration with QuantConnect's LEAN Engine</li>
+      <li><strong>Q4 2025</strong> – Integration with Notion for research and strategy management</li>
+    </ul>
   </div>
 
   <div class="footer">
@@ -244,3 +263,4 @@
 
 </body>
 </html>
+

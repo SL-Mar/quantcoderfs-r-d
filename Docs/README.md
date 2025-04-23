@@ -1,63 +1,73 @@
-# QuantCoder_FS – Full-Stack AI Platform for Quantitative Finance
+# QuantCoderFS – Modular AI Workflows for Alpha Research  
 **Author: Sebastien M. Laignel**
 
 ---
 
-## What is QuantCoder FS?
+## What is QuantCoderFS?
 
-**QuantCoder FS** is a full-stack AI-powered research platform designed to accelerate and automate key workflows in quantitative finance. It coordinates LLM agents across a modular architecture, enabling:
+**QuantCoderFS** is a local-first, modular AI platform for automating **alpha research** in quantitative finance. It orchestrates LLM agents, financial data APIs, and reproducible workflows to support:
 
-- PDF Summarization – extract structured insights from academic or financial documents  
-- Fundamental Data Analysis – parse and interpret financial fundamentals provided by EODHD APIs  
-- Algorithmic Strategy Generation – turn insights into QuantConnect-ready trading code  
-- Article Search – find and rank academic or industry papers relevant to your query
+- **Search & Retrieval** – academic papers, earnings transcripts, and financial media  
+- **Summarization** – context-aware insight extraction from structured/unstructured documents  
+- **Fundamental Analysis** – LLM-assisted interpretation of equities data  
+- **Strategy Code Generation** – Python output compatible with the **QuantConnect** platform  
 
-Built with a **FastAPI + CrewAI** backend and a **Next.js** frontend, the platform offers a seamless interface for exploratory research, strategy development, and structured analysis.
+The platform is powered by a **FastAPI + CrewAI** backend and a **Next.js** frontend.  
+All workflows are designed to run locally — no login, no tracking, no cloud dependency.
 
-> *Both backend and frontend are currently private during active development.*  
-> The [legacy CLI prototype](https://github.com/SL-Mar/quantcoder-legacy) remains publicly available.
-
----
-
-## Documentation & Development Log
-
-Project documentation, development notes, and behind-the-scenes updates are now published on Substack:  
-[quantcoderfs.substack.com](https://quantcoderfs.substack.com)
-
-This repository will serve as a workspace for:
-
-- Research notebooks and experimental workflows  
-- Prototyping and testing new features  
-- Linking documentation and platform components
-
-### ▶ Full Demo Video (April 15)
-
-[Watch the full demo video on Substack](https://quantcoderfs.substack.com/p/full-demo-quantcoder-fs-ai-quant)
+> _This repository documents the architecture, components, and development of the platform._  
+> The [legacy CLI prototype](https://github.com/SL-Mar/quantcoder-legacy) remains available for early contributors.
 
 ---
 
-## How to Support the Project
+## 📚 Documentation & Research Log
 
-Support future development and get early access by subscribing to the **paid tier** on Substack. Subscribers receive:
+All devlogs, research updates, and annotated workflows are published here:  
+🔗 [quantcoderfs.substack.com](https://quantcoderfs.substack.com)
 
-- Early access to the platform upon release  
-- Full access to core research documents and source breakdowns  
-- Exclusive technical notes, strategy walkthroughs, and roadmap previews
-
-Your support helps build an independent and transparent research platform for the quant community. Thank you!
+This repository contains:
+- Research notes and working notebooks  
+- Flow designs and system diagrams  
+- Validation tests and prototyping outputs  
+- Links to the app components and backend agents
 
 ---
 
-## Public Access Summary
+## 📽 Full Demo Video
 
-| Component          | Access      | Notes                                                                 |
-|-------------------|-------------|-----------------------------------------------------------------------|
-| `QuantCoder_FS`   | Private     | Actively in development (full-stack)                                  |
-| `QuantCoder (CLI)`| Public      | [Legacy prototype](https://github.com/SL-Mar/quantcoder-legacy) for early adopters and contributors |
-| Documentation      | Public      | [Substack](https://quantcoderfs.substack.com) hosts updates and devlogs |
+**▶ Watch the Full Demo: QuantCoderFS – AI Quant Research Lab**  
+[🔗 View on Substack](https://open.substack.com/pub/quantcoderfs/p/full-demo-quantcoder-fs-ai-quant?r=5hdac8&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false)
+
+> This 5-minute walkthrough covers the architecture, research workflows, and coding capabilities of the QuantCoderFS platform.
+
+---
+
+## 🤝 How to Support the Project
+
+QuantCoderFS is developed independently — without institutional or commercial backing.  
+You can support open research and development by:
+
+- Becoming a **GitHub Sponsor**  
+- Subscribing to the **paid tier** on [Substack](https://quantcoderfs.substack.com)
+
+Supporters receive:
+- Early access to the platform  
+- In-depth strategy walkthroughs  
+- Raw research notebooks and code breakdowns
+
+Thank you for helping sustain independent work in finance and AI.
+
+---
+
+## 🔓 Public Access Summary
+
+| Component               | Access      | Notes                                                                 |
+|------------------------|-------------|-----------------------------------------------------------------------|
+| `QuantCoderFS` (app)   | Coming soon | Full-stack local-first release planned for public distribution        |
+| `QuantCoder` (CLI)     | Public      | [Legacy prototype](https://github.com/SL-Mar/quantcoder-legacy)      |
+| Documentation & Logs   | Public      | [Substack](https://quantcoderfs.substack.com)                         |
 
 ---
 
 ##  
 _End of documentation._
-

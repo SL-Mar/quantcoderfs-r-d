@@ -50,13 +50,6 @@ You can support open research and development by:
 - Becoming a **GitHub Sponsor**  
 - Subscribing to the **paid tier** on [Substack](https://quantcoderfs.substack.com)
 
-Supporters receive:
-- Early access to the platform  
-- In-depth strategy walkthroughs  
-- Raw research notebooks and code breakdowns
-
-Thank you for helping sustain independent work in finance and AI.
-
 ---
 
 ## 🔓 Public Access Summary

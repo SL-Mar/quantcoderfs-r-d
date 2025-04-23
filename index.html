@@ -120,10 +120,6 @@
       color: var(--highlight);
     }
 
-    .nowrap {
-      white-space: nowrap;
-    }
-
     .footer {
       text-align: center;
       padding: 2rem 0;
@@ -190,23 +186,26 @@
   </div>
 
   <div class="roadmap">
-    <h2>Planned Improvements</h2>
-    <ul>
-      <li>Push generated code directly to QuantConnect for backtesting</li>
-      <li>Log based reinforcement learning of agents</li>
-      <li>Integrate Notion into Chat with Fundamentals workflow</li>
-      <li>Add real-time scanning and signal generation workflows</li>
-      <li>Enable time series forecasting with interpretable models</li>
-    </ul>
-  </div>
-
-  <div class="roadmap">
-    <h2>Design Benchmarks</h2>
-    <ul>
-      <li><span class="nowrap"><strong>Perplexity.ai –</strong></span> Reference for low-latency, relevant financial information retrieval</li>
-      <li><span class="nowrap"><strong>Finviz –</strong></span> Visual benchmark for clean, interpretable market interfaces</li>
-      <li><span class="nowrap"><strong>QuantCoderFS –</strong></span> 90% zero-compilation error rate in LLM-generated QuantConnect code (post-validation)</li>
-    </ul>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; text-align: left; max-width: 1000px; margin: 0 auto;">
+      <div>
+        <h2>Planned Improvements</h2>
+        <ul>
+          <li>Push generated code directly to QuantConnect for backtesting</li>
+          <li>Log-based reinforcement learning of agents</li>
+          <li>Integrate Notion into Chat with Fundamentals workflow</li>
+          <li>Add real-time scanning and signal generation workflows</li>
+          <li>Enable time series forecasting with interpretable models</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Design Benchmarks</h2>
+        <ul>
+          <li><strong>Perplexity.ai –</strong> Reference for low-latency, relevant financial information retrieval</li>
+          <li><strong>Finviz –</strong> Visual benchmark for clean, interpretable market interfaces</li>
+          <li><strong>QuantCoderFS –</strong> 90% zero-compilation error rate in LLM-generated QuantConnect code</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="footer">

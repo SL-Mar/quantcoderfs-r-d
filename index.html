@@ -114,9 +114,10 @@
       color: var(--highlight);
     }
 
-    .no-wrap {
+    .no-wrap-list li {
       white-space: nowrap;
-      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .footer {
@@ -198,10 +199,10 @@
       </div>
       <div>
         <h2>Design Benchmarks</h2>
-        <ul>
-          <li><span class="no-wrap"><strong>Perplexity.ai –</strong> Reference for low-latency, relevant financial information retrieval</span></li>
-          <li><span class="no-wrap"><strong>Finviz –</strong> Visual benchmark for clean, interpretable market interfaces</span></li>
-          <li><span class="no-wrap"><strong>QuantCoderFS –</strong> 90% zero-compilation error rate in LLM-generated QuantConnect code</span></li>
+        <ul class="no-wrap-list">
+          <li><strong>Perplexity.ai –</strong> Reference for low-latency, relevant financial information retrieval</li>
+          <li><strong>Finviz –</strong> Visual benchmark for clean, interpretable market interfaces</li>
+          <li><strong>QuantCoderFS –</strong> 90% zero-compilation error rate in LLM-generated QuantConnect code</li>
         </ul>
       </div>
     </div>
@@ -213,6 +214,7 @@
 
 </body>
 </html>
+
 
 
 

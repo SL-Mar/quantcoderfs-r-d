@@ -1,257 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>QuantCoderFS – Modular AI Workflows for Alpha Research</title>
   <meta name="description" content="QuantCoderFS – A local-first research platform for AI-assisted alpha research in finance." />
+  <!-- Social sharing -->
+  <meta property="og:title" content="QuantCoderFS – Modular AI Workflows for Alpha Research" />
+  <meta property="og:description" content="Local-first. No login. No cloud." />
+  <link rel="icon" href="favicon.ico" />
   <style>
+    /* Minimal reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --bg-color: #0d1117;
-      --card-bg: #161b22;
-      --text-color: #c9d1d9;
-      --highlight: #58a6ff;
-      --nav-bg: #21262d;
-      --border-color: #30363d;
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-alt: #21262d;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --shadow: 0 4px 12px rgba(0, 0, 0, .2);
     }
 
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      background: var(--surface-alt);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
     }
 
     nav {
-      background-color: var(--nav-bg);
+      max-width: 1100px;
+      margin: auto;
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      gap: 1rem;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid var(--border-color);
+      gap: .75rem 2rem;
+      justify-content: center;
+      padding: 1rem;
     }
 
     nav a {
-      color: var(--text-color);
+      color: var(--text);
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: .95rem;
+      transition: color .2s ease;
     }
 
-    nav a:hover {
-      color: var(--highlight);
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1rem 4rem;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 5vw, 3rem);
       text-align: center;
-      margin-bottom: 0.5rem;
-      color: var(--highlight);
+      color: var(--accent);
+      margin-bottom: .5rem;
     }
 
-    p.subtitle {
+    .subtitle {
       text-align: center;
-      font-size: 1.1rem;
-      color: #8b949e;
-      margin-bottom: 2rem;
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
     }
 
+    /* Features grid */
     .features {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      margin: 2rem auto;
-      max-width: 900px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
     }
 
     .card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 1.5rem;
-      border-radius: 8px;
+      background: var(--surface);
+      padding: 1.75rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
     }
 
     .card h3 {
-      margin-top: 0;
-      font-size: 1.2rem;
+      margin-bottom: .75rem;
+      font-size: 1.25rem;
     }
-
-    .green { color: #3fb950; }
-    .orange { color: #f78166; }
-    .blue { color: #58a6ff; }
-    .purple { color: #bc8cff; }
 
     .card p {
-      font-size: 0.95rem;
-      line-height: 1.5;
+      font-size: .95rem;
     }
 
-    .roadmap {
-      margin-top: 3rem;
-      text-align: center;
-    }
+    .green  { color: #3fb950; }
+    .orange { color: #f78166; }
+    .blue   { color: #58a6ff; }
+    .purple { color: #bc8cff; }
 
-    .roadmap h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid var(--border-color);
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-
-    .roadmap ul {
-      list-style: none;
-      padding: 0;
-      margin: 1.5rem auto;
-      max-width: 600px;
-      line-height: 1.8;
-      color: #c9d1d9;
-    }
-
-    .roadmap li::before {
-      content: "• ";
-      color: var(--highlight);
-    }
-
-    .footer {
-      text-align: center;
-      padding: 2rem 0;
-      font-size: 0.85rem;
-      color: #666;
-      border-top: 1px solid var(--border-color);
+    .section-heading {
+      font-size: 1.6rem;
       margin-top: 4rem;
-    }
-
-    a {
-      color: var(--highlight);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      margin-bottom: 1.25rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      display: inline-block;
+      padding-bottom: .4rem;
     }
 
     .grid-columns {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: left;
+      margin-top: 2rem;
     }
 
-    .logo-container {
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    li + li { margin-top: .5rem; }
+    li::before { content: "• "; color: var(--accent); margin-right: .25rem; }
+
+    .logos {
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 2.5rem;
       flex-wrap: wrap;
-      margin: 3rem auto 2rem;
+      gap: 2rem;
+      margin-top: 3rem;
     }
 
-    .logo-container a img {
-      height: 40px;
-      transition: transform 0.3s ease;
+    .logos a img {
+      height: 38px;
       filter: grayscale(100%) brightness(1.2);
+      transition: filter .3s ease, transform .3s ease;
     }
 
-    .logo-container a:hover img {
-      transform: scale(1.1);
+    .logos a:hover img,
+    .logos a:focus-visible img {
       filter: none;
+      transform: scale(1.1);
     }
+
+    footer {
+      margin-top: 4rem;
+      padding: 2rem 1rem 3rem;
+      text-align: center;
+      font-size: .85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Smooth scrolling for internal links */
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
+  <header>
+    <nav aria-label="Main">
+      <a href="#top">Home</a>
+      <a href="https://quantcoderfs.substack.com" target="_blank" rel="noopener">Substack</a>
+      <a href="https://github.com/SL-Mar" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://open.substack.com/pub/quantcoderfs/p/full-demo-quantcoder-fs-ai-quant" target="_blank" rel="noopener">Demo Video</a>
+      <a href="mailto:smr.laignel@gmail.com">Contact</a>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="https://quantcoderfs.substack.com" target="_blank">Substack</a>
-    <a href="https://github.com/SL-Mar" target="_blank">GitHub</a>
-    <a href="https://open.substack.com/pub/quantcoderfs/p/full-demo-quantcoder-fs-ai-quant" target="_blank">Demo Video</a>
-    <a href="mailto:smr.laignel@gmail.com">Contact</a>
-  </nav>
+  <main id="top">
+    <h1>QuantCoderFS</h1>
+    <p class="subtitle">Modular AI workflows for alpha research in finance.<br>Local-first. No login. No cloud.</p>
 
-  <h1>QuantCoderFS</h1>
-  <p class="subtitle">
-    Modular AI workflows for alpha research in finance. Local-first. No login. No cloud.
-  </p>
+    <section class="features" id="features">
+      <article class="card">
+        <h3 class="green">Chat with Fundamentals</h3>
+        <p>Transform financial queries into structured research notes using EODHD data and large language models. Includes ratio analysis, OHLCV history and news filtering.</p>
+      </article>
+      <article class="card">
+        <h3 class="orange">Search Articles</h3>
+        <p>LLM-enhanced agents expand queries across arXiv and CrossRef, returning matched papers with titles, abstracts, and source metadata.</p>
+      </article>
+      <article class="card">
+        <h3 class="blue">Summary Generation</h3>
+        <p>Extract and restructure academic papers into concise, sectioned Markdown summaries – perfect for research documentation or Notion export.</p>
+      </article>
+      <article class="card">
+        <h3 class="purple">Code Generation</h3>
+        <p>Convert research summaries into QuantConnect-ready Python strategies with syntax validation, logic modelling, and agent-based refinement.</p>
+      </article>
+    </section>
 
-  <div class="features">
-    <div class="card">
-      <h3 class="green">Chat with Fundamentals</h3>
-      <p>
-        Transforms financial queries into structured research notes using EODHD data and LLMs.
-        Includes financial ratios analysis, OHLCV history and news filtering.
-      </p>
-    </div>
-    <div class="card">
-      <h3 class="orange">Search Articles</h3>
-      <p>
-        Uses LLM-enhanced agents to expand user queries and search arXiv and CrossRef.
-        Returns matched papers with title, abstract, and source metadata.
-      </p>
-    </div>
-    <div class="card">
-      <h3 class="blue">Summary Generation</h3>
-      <p>
-        Extracts and restructures academic papers into concise, sectioned Markdown summaries.
-        Suitable for research documentation and export to Notion.
-      </p>
-    </div>
-    <div class="card">
-      <h3 class="purple">Code Generation</h3>
-      <p>
-        Converts structured research summaries into QuantConnect-ready Python strategies.
-        Includes syntax validation, logic modeling, and agent-based code refinement.
-      </p>
-    </div>
-  </div>
-
-  <div class="roadmap">
+    <h2 class="section-heading" id="roadmap">Product Roadmap</h2>
     <div class="grid-columns">
       <div>
-        <h2>Planned Improvements</h2>
+        <h3 class="green">Planned Improvements</h3>
         <ul>
-          <li>Push generated code directly to QuantConnect for backtesting</li>
+          <li>Push generated code directly to QuantConnect for back-testing</li>
           <li>Log-based reinforcement learning of agents</li>
           <li>Integrate Notion into Chat with Fundamentals workflow</li>
           <li>Add real-time scanning and signal generation workflows</li>
-          <li>Enable time series forecasting with interpretable models</li>
+          <li>Enable time-series forecasting with interpretable models</li>
         </ul>
       </div>
       <div>
-        <h2>Design Benchmarks</h2>
-        <ul style="list-style-position: outside; padding-left: 1em;">
-          <li><strong>Perplexity.ai –</strong> Reference for low-latency, relevant financial information retrieval</li>
-          <li><strong>Finviz –</strong> Visual benchmark for clean, interpretable market interfaces</li>
-          <li><strong>QuantCoderFS –</strong> 90% zero-compilation error rate in LLM-generated QuantConnect code</li>
+        <h3 class="orange">Design Benchmarks</h3>
+        <ul>
+          <li><strong>Perplexity.ai</strong> – low-latency, relevant financial information retrieval</li>
+          <li><strong>Finviz</strong> – clean, interpretable market interfaces</li>
+          <li><strong>QuantCoderFS</strong> – 90 % zero-compilation error rate in LLM-generated QuantConnect code</li>
         </ul>
       </div>
     </div>
-  </div>
 
-  <h2 style="text-align: center;color: #f78166;">Powered By</h2>
-  <div class="logo-container">
-    <a href="https://eodhd.com?via=slmar" target="_blank" title="EODHD" rel="noopener noreferrer">
-      <img src="https://eodhistoricaldata.com/img/logo.png" alt="EODHD" />
-    </a>
-    <a href="https://www.crewai.com" target="_blank" title="CrewAI" rel="noopener noreferrer">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Robot_icon.svg/64px-Robot_icon.svg.png" alt="CrewAI" />
-    </a>
-    <a href="https://arxiv.org" target="_blank" title="arXiv" rel="noopener noreferrer">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/ArXiv_logo.png" alt="arXiv" />
-    </a>
-    <a href="https://www.crossref.org" target="_blank" title="CrossRef" rel="noopener noreferrer">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Crossref_logo.svg" alt="CrossRef" />
-    </a>
-  </div>
+    <h2 class="section-heading" style="color:#f78166">Powered By</h2>
+    <div class="logos">
+      <a href="https://eodhd.com?via=slmar" target="_blank" title="EODHD" rel="noopener"><img src="https://eodhistoricaldata.com/img/logo.png" alt="EODHD"></a>
+      <a href="https://www.crewai.com" target="_blank" title="CrewAI" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Robot_icon.svg/64px-Robot_icon.svg.png" alt="CrewAI"></a>
+      <a href="https://arxiv.org" target="_blank" title="arXiv" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/ArXiv_logo.png" alt="arXiv"></a>
+      <a href="https://www.crossref.org" target="_blank" title="CrossRef" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Crossref_logo.svg" alt="CrossRef"></a>
+    </div>
+  </main>
 
-  <div class="footer">
-    &copy; 2025 Sebastien M. Laignel – SL Mar - QuantCoderFS. All rights reserved.
-  </div>
-
+  <footer>
+    © 2025 Sebastien M. Laignel – SL Mar · QuantCoderFS. All rights reserved.
+  </footer>
 </body>
+</html>
 </html>
 
 

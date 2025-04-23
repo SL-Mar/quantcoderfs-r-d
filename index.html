@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>QuantCoder FS – AI for Quantitative Finance Research</title>
+  <title>QuantCoderFS – Modular AI Workflows for Alpha Research</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="QuantCoder FS – Automating finance research with LLMs and EODHD APIs." />
+  <meta name="description" content="QuantCoderFS – A local-first research platform for AI-assisted alpha research in finance." />
   <style>
     :root {
       --bg-color: #0d1117;
@@ -43,10 +43,15 @@
       color: var(--highlight);
     }
 
+    .container {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
     h1 {
       font-size: 2.5rem;
       text-align: center;
-      margin-top: 2rem;
       margin-bottom: 0.5rem;
       color: var(--highlight);
     }
@@ -55,16 +60,15 @@
       text-align: center;
       font-size: 1.1rem;
       color: #8b949e;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
 
     .features {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto 4rem;
-      padding: 0 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 2rem auto;
+      max-width: 900px;
     }
 
     .card {
@@ -87,23 +91,6 @@
     .card p {
       font-size: 0.95rem;
       line-height: 1.5;
-    }
-
-    .section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 1rem 4rem;
-    }
-
-    .card ul {
-      padding-left: 1.2rem;
-      line-height: 1.6;
-      font-size: 0.95rem;
-      margin-top: 1rem;
-    }
-
-    .card ul li::marker {
-      color: var(--highlight);
     }
 
     .roadmap {
@@ -156,110 +143,73 @@
 
   <nav>
     <a href="#">Home</a>
-    <a href="https://medium.com/@sl_mar/quantcoder-fs-development-log-1b3b7e8c23de" target="_blank">Devlog</a>
-    <a href="https://quantcoderfs.substack.com/" target="_blank">Documentation</a>
-    <a href="https://medium.com/ai-advances/towards-automating-quantitative-finance-research-c868a2a6477e" target="_blank">Article</a>
+    <a href="https://quantcoderfs.substack.com" target="_blank">Substack</a>
     <a href="https://github.com/SL-Mar" target="_blank">GitHub</a>
+    <a href="https://open.substack.com/pub/quantcoderfs/p/full-demo-quantcoder-fs-ai-quant" target="_blank">Demo Video</a>
     <a href="mailto:smr.laignel@gmail.com">Contact</a>
   </nav>
 
-  <h1>Welcome to QuantCoder FS</h1>
+  <h1>QuantCoderFS</h1>
   <p class="subtitle">
-    Researching and prototyping trading strategies using financial data and agentic AI.
+    Modular AI workflows for alpha research in finance. Local-first. No login. No cloud.
   </p>
 
   <div class="features">
     <div class="card">
       <h3 class="green">Chat with Fundamentals</h3>
-      <p>Analyze company fundamentals and financial news through a conversational interface powered by EODHD APIs.</p>
+      <p>
+        Transforms financial queries into structured research notes using EODHD data and LLMs.
+        Includes KPI analysis, OHLCV history, news filtering, and executive summary generation.
+      </p>
     </div>
     <div class="card">
       <h3 class="orange">Search Articles</h3>
-      <p>Query academic literature using CrossRef and arXiv APIs, enhanced by LLM-driven keyword expansion.</p>
+      <p>
+        Uses LLM-enhanced agents to expand user queries and search arXiv and CrossRef.
+        Returns matched papers with title, abstract, and source metadata.
+      </p>
     </div>
     <div class="card">
       <h3 class="blue">Summary Generation</h3>
-      <p>Transform academic papers into structured, Markdown-formatted summaries suitable for research workflows.</p>
+      <p>
+        Extracts and restructures academic papers into concise, sectioned Markdown summaries.
+        Suitable for research documentation and export to Notion.
+      </p>
     </div>
     <div class="card">
       <h3 class="purple">Code Generation</h3>
-      <p>Convert plain-text strategy ideas into validated QuantConnect-ready Python code using AI agents.</p>
-    </div>
-  </div>
-
-  <div style="text-align: center; margin: 4rem auto 2rem;">
-    <h2 style="font-size: 1.8rem; color: var(--highlight); margin: 0;">
-      Workflows description
-    </h2>
-    <p style="font-size: 1.8rem; color: var(--highlight); margin: 0;">
-      As implemented to date
-    </p>
-  </div>
-
-  <div class="section">
-
-    <div class="card">
-      <h3 class="green">Chat with Fundamentals <span style="float:right; font-weight:normal;">v1.0 — 15 April 2025</span></h3>
-      <p>Transforms a natural language financial query into a professional research note. The flow orchestrates structured API calls and LLMs to analyze metrics, price history, and news.</p>
-      <ul>
-        <li>Interpret the user query to identify tickers, data needs, and date ranges.</li>
-        <li>Fetch selected financial KPIs from EODHD fundamentals API.</li>
-        <li>Retrieve recent OHLCV data (default 3-month history).</li>
-        <li>Fetch and filter recent news headlines per ticker.</li>
-        <li>Use an LLM to write an executive summary based on all collected inputs.</li>
-        <li>Return a structured object with tickers, metrics, quotes, news, and summary.</li>
-      </ul>
-    </div>
-
-    <div class="card" style="margin-top: 2rem;">
-      <h3 class="orange">Search Articles <span style="float:right; font-weight:normal;">v1.0 — 15 April 2025</span></h3>
-      <p>Finds academic papers by expanding the user query, inferring arXiv categories, and pulling from CrossRef and arXiv using LLM-enhanced agents.</p>
-      <ul>
-        <li>Extract core terms, expanded terms, and category hints from user query.</li>
-        <li>Query arXiv and CrossRef using structured parameters.</li>
-        <li>Return matching articles with title, abstract, link, and source.</li>
-      </ul>
-    </div>
-
-    <div class="card" style="margin-top: 2rem;">
-      <h3 class="blue">Summary Generation <span style="float:right; font-weight:normal;">v1.0 — 15 April 2025</span></h3>
-      <p>Analyzes full academic articles to produce detailed, structured summaries in Markdown format, suitable for research documentation and knowledge sharing.</p>
-      <ul>
-        <li>Extract detailed insights from all sections of the paper.</li>
-        <li>Organize key points by section with labeled bullet lists.</li>
-        <li>Refine structure into well-formatted Markdown with clear headings.</li>
-        <li>Preserve technical depth while improving clarity.</li>
-        <li>Return a Markdown string with the paper’s conceptual structure.</li>
-        <li>Export summaries to Notion for further refinement.</li>
-      </ul>
-    </div>
-
-    <div class="card" style="margin-top: 2rem;">
-      <h3 class="purple">Code Generation <span style="float:right; font-weight:normal;">v0.4 — 15 April 2025</span></h3>
-      <p>Translates a plain-text trading strategy into validated Python code for QuantConnect. Uses multiple agents for parsing, generation, and syntax validation.</p>
-      <ul>
-        <li>Parse the strategy into structured logic: indicators, signals, alpha models.</li>
-        <li>Generate Python code for QuantConnect’s LEAN Engine.</li>
-        <li>Run AST-based syntax validation and patch compatibility issues.</li>
-        <li>Ensure code defines Initialize(), OnData(), and correct API usage.</li>
-        <li>Return final Python code with filename and metadata.</li>
-      </ul>
+      <p>
+        Converts structured research summaries into QuantConnect-ready Python strategies.
+        Includes syntax validation, logic modeling, and agent-based code refinement.
+      </p>
     </div>
   </div>
 
   <div class="roadmap">
-    <h2>Development Roadmap</h2>
+    <h2>Planned Improvements</h2>
     <ul>
-      <li><strong>Q2 2025</strong> – Integration with EODHD APIs</li>
-      <li><strong>Q3 2025</strong> – Integration with QuantConnect's LEAN Engine</li>
-      <li><strong>Q3 2025</strong> – Cloud deployment and release</li>
+      <li>Push generated code directly to QuantConnect for backtesting</li>
+      <li>Integrate Chat with Fundamentals workflow into Notion</li>
+      <li>Add real-time scanning and signal generation workflows</li>
+      <li>Enable time series forecasting with interpretable models</li>
+      <li>Expand modularity and reuse across workflows</li>
+    </ul>
+  </div>
+
+  <div class="roadmap">
+    <h2>Design Benchmarks</h2>
+    <ul>
+      <li><strong>Perplexity.ai</strong> – Reference for low-latency, relevant financial information retrieval</li>
+      <li><strong>Finviz</strong> – Visual benchmark for clean, interpretable market interfaces</li>
+      <li><strong>QuantCoderFS</strong> – Achieving 95% zero-compilation rate in LLM-generated QuantConnect code (post-validation)</li>
     </ul>
   </div>
 
   <div class="footer">
-    &copy; 2025 SL MAR – QuantCoder FS. All rights reserved.
+    &copy; 2025 Sebastien M. Laignel – QuantCoderFS. All rights reserved.
   </div>
 
 </body>
 </html>
+
 

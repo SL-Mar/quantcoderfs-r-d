@@ -19,6 +19,7 @@
       --text: #c9d1d9;
       --muted: #8b949e;
       --accent: #58a6ff;
+      --accent-hover: #7dbdff;
       --shadow: 0 4px 12px rgba(0,0,0,.2);
     }
 
@@ -36,14 +37,15 @@
       box-shadow: var(--shadow);
     }
 
+    a { color: var(--accent); text-decoration: none; transition: color .2s ease; }
+    a:hover, a:focus-visible { color: var(--accent-hover); }
+
     nav {
       max-width: 1100px; margin: auto;
       display: flex; flex-wrap: wrap; gap: .75rem 2rem; justify-content: center;
       padding: 1rem;
     }
-
-    nav a { color: var(--text); text-decoration: none; font-size: .95rem; transition: color .2s }
-    nav a:hover, nav a:focus-visible { color: var(--accent); }
+    nav a { font-size: .95rem; font-weight: 500; }
 
     main { max-width: 1100px; margin: auto; padding: 3rem 1rem 4rem; }
 
@@ -57,12 +59,15 @@
     }
 
     .features {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.75rem;
+      display: flex; gap: 1.75rem; flex-wrap: nowrap; overflow-x: auto; padding-bottom: .5rem;
+      scroll-snap-type: x mandatory;
     }
     .card {
       background: var(--surface); padding: 1.75rem 1.5rem;
       border: 1px solid var(--border); border-radius: 10px;
       transition: transform .2s, box-shadow .2s;
+      flex: 1 0 260px;
+      scroll-snap-align: start;
     }
     .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
     .card h3 { margin-bottom: .75rem; font-size: 1.25rem; }
@@ -79,8 +84,12 @@
     li + li { margin-top: .5rem; }
     li::before { content: "• "; color: var(--accent); margin-right: .25rem; }
 
+    .powered-heading {
+      text-align: center; font-size: 1.6rem; margin-top: 4rem; margin-bottom: 1rem; color: var(--accent);
+    }
+
     .logos {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 3rem;
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;
     }
     .logos a img {
       height: 38px; filter: grayscale(100%) brightness(1.2);
@@ -88,7 +97,11 @@
     }
     .logos a:hover img, .logos a:focus-visible img { filter: none; transform: scale(1.1); }
 
-    footer { margin-top: 4rem; padding: 2rem 1rem 3rem; text-align: center; font-size: .85rem; color: var(--muted); border-top: 1px solid var(--border); }
+    footer {
+      margin-top: 4rem; padding: 2rem 1rem 3rem; text-align: center; font-size: .85rem; color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
     html { scroll-behavior: smooth; }
   </style>
 </head>
@@ -105,17 +118,16 @@
 
   <main id="top">
     <h1>QuantCoderFS</h1>
-    <p class="subtitle">Modular AI workflows for alpha research in finance.<br>Local‑first. No login. No cloud.</p>
+    <p class="subtitle">Modular AI workflows for alpha research in finance.<br>Local-first. No login. No cloud.</p>
 
-    <!-- Workflows (aligned with docs page) -->
     <section class="features" id="features">
       <article class="card">
         <h3 class="blue">Chat with Fundamentals</h3>
-        <p>Transforms a natural‑language financial query into a professional research note. The flow orchestrates structured API calls and LLMs to analyze metrics, price history, and news.</p>
+        <p>Transforms a natural-language financial query into a professional research note. The flow orchestrates structured API calls and LLMs to analyze metrics, price history, and news.</p>
       </article>
       <article class="card">
         <h3 class="orange">Search Articles</h3>
-        <p>Finds academic papers by expanding the user query, inferring arXiv categories, and pulling from CrossRef and arXiv using LLM‑enhanced agents.</p>
+        <p>Finds academic papers by expanding the user query, inferring arXiv categories, and pulling from CrossRef and arXiv using LLM-enhanced agents.</p>
       </article>
       <article class="card">
         <h3 class="green">Summary Generation</h3>
@@ -123,44 +135,50 @@
       </article>
       <article class="card">
         <h3 class="purple">Code Generation</h3>
-        <p>Translates a plain‑text trading strategy into validated Python code for QuantConnect. Uses multiple agents for parsing, generation, and syntax validation.</p>
+        <p>Translates a plain-text trading strategy into validated Python code for QuantConnect. Uses multiple agents for parsing, generation, and syntax validation.</p>
       </article>
     </section>
 
-    <!-- Planned improvements & design benchmarks (title removed per request) -->
     <div class="grid-columns">
       <div>
         <h3 class="green">Planned Improvements</h3>
         <ul>
-          <li>Push generated code directly to QuantConnect for back‑testing</li>
-          <li>Log‑based reinforcement learning of agents</li>
+          <li>Push generated code directly to QuantConnect for back-testing</li>
+          <li>Log-based reinforcement learning of agents</li>
           <li>Integrate Notion into Chat with Fundamentals workflow</li>
-          <li>Add real‑time scanning and signal generation workflows</li>
-          <li>Enable time‑series forecasting with interpretable models</li>
+          <li>Add real-time scanning and signal generation workflows</li>
+          <li>Enable time-series forecasting with interpretable models</li>
         </ul>
       </div>
       <div>
         <h3 class="orange">Design Benchmarks</h3>
         <ul>
-          <li><strong>Perplexity.ai</strong> – low‑latency, relevant financial information retrieval</li>
+          <li><strong>Perplexity.ai</strong> – low-latency, relevant financial information retrieval</li>
           <li><strong>Finviz</strong> – clean, interpretable market interfaces</li>
-          <li><strong>QuantCoderFS</strong> – 90 % zero‑compilation error rate in LLM‑generated QuantConnect code</li>
+          <li><strong>QuantCoderFS</strong> – 90 % zero-compilation error rate in LLM-generated QuantConnect code</li>
         </ul>
       </div>
     </div>
 
-    <!-- App engine links (logos) -->
-    <h2 class="sr-only">App Engines</h2>
+    <h2 class="powered-heading">Powered&nbsp;By</h2>
     <div class="logos">
-      <a href="https://eodhd.com?via=slmar" target="_blank" title="EODHD" rel="noopener"><img src="https://eodhistoricaldata.com/img/logo.png" alt="EODHD"></a>
-      <a href="https://www.crewai.com" target="_blank" title="CrewAI" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Robot_icon.svg/64px-Robot_icon.svg.png" alt="CrewAI"></a>
-      <a href="https://arxiv.org" target="_blank" title="arXiv" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/ArXiv_logo.png" alt="arXiv"></a>
-      <a href="https://www.crossref.org" target="_blank" title="CrossRef" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Crossref_logo.svg" alt="CrossRef"></a>
+      <a href="https://eodhd.com?via=slmar" target="_blank" title="EODHD" rel="noopener">
+        <img src="https://eodhistoricaldata.com/img/logo.png" alt="EODHD">
+      </a>
+      <a href="https://www.crewai.com" target="_blank" title="CrewAI" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Robot_icon.svg/64px-Robot_icon.svg.png" alt="CrewAI">
+      </a>
+      <a href="https://arxiv.org" target="_blank" title="arXiv" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/ArXiv_logo.png" alt="arXiv">
+      </a>
+      <a href="https://www.crossref.org" target="_blank" title="CrossRef" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Crossref_logo.svg" alt="CrossRef">
+      </a>
     </div>
   </main>
 
   <footer>
-    © 2025 Sebastien M. Laignel – SL Mar · QuantCoderFS. All rights reserved.
+    © 2025 Sebastien M. Laignel – SL Mar · QuantCoderFS. All rights reserved.
   </footer>
 </body>
 </html>

@@ -2,226 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>QuantCoderFS – Modular AI Workflows for Alpha Research</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="QuantCoderFS – A local-first research platform for AI-assisted alpha research in finance." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Powered By Logos</title>
   <style>
-    :root {
-      --bg-color: #0d1117;
-      --card-bg: #161b22;
-      --text-color: #c9d1d9;
-      --highlight: #58a6ff;
-      --nav-bg: #21262d;
-      --border-color: #30363d;
-    }
-
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #0d1117;
+      color: #c9d1d9;
+      text-align: center;
     }
 
-    nav {
-      background-color: var(--nav-bg);
+    h2 {
+      color: #c9d1d9;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo-container {
       display: flex;
       justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
       flex-wrap: wrap;
-      gap: 1rem;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    nav a {
-      color: var(--text-color);
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-
-    nav a:hover {
-      color: var(--highlight);
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 0.5rem;
-      color: var(--highlight);
-    }
-
-    p.subtitle {
-      text-align: center;
-      font-size: 1.1rem;
-      color: #8b949e;
       margin-bottom: 2rem;
     }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      margin: 2rem auto;
-      max-width: 900px;
+    .logo-container a img {
+      height: 40px;
+      transition: transform 0.3s ease;
+      filter: grayscale(100%) brightness(1.2);
     }
 
-    .card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 1.5rem;
-      border-radius: 8px;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      font-size: 1.2rem;
-    }
-
-    .green { color: #3fb950; }
-    .orange { color: #f78166; }
-    .blue { color: #58a6ff; }
-    .purple { color: #bc8cff; }
-
-    .card p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .roadmap {
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .roadmap h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid var(--border-color);
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-
-    .roadmap ul {
-      list-style: none;
-      padding: 0;
-      margin: 1.5rem auto;
-      max-width: 600px;
-      line-height: 1.8;
-      color: #c9d1d9;
-    }
-
-    .roadmap li::before {
-      content: "• ";
-      color: var(--highlight);
-    }
-
-    .footer {
-      text-align: center;
-      padding: 2rem 0;
-      font-size: 0.85rem;
-      color: #666;
-      border-top: 1px solid var(--border-color);
-      margin-top: 4rem;
+    .logo-container a:hover img {
+      transform: scale(1.1);
+      filter: none;
     }
 
     a {
-      color: var(--highlight);
       text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="https://quantcoderfs.substack.com" target="_blank">Substack</a>
-    <a href="https://github.com/SL-Mar" target="_blank">GitHub</a>
-    <a href="https://open.substack.com/pub/quantcoderfs/p/full-demo-quantcoder-fs-ai-quant" target="_blank">Demo Video</a>
-    <a href="mailto:smr.laignel@gmail.com">Contact</a>
-  </nav>
+  <h2>Powered By</h2>
 
-  <h1>QuantCoderFS</h1>
-  <p class="subtitle">
-    Modular AI workflows for alpha research in finance. Local-first. No login. No cloud.
-  </p>
-
-  <div class="features">
-    <div class="card">
-      <h3 class="green">Chat with Fundamentals</h3>
-      <p>
-        Transforms financial queries into structured research notes using EODHD data and LLMs.
-        Includes financial ratios analysis, OHLCV history and news filtering.
-      </p>
-    </div>
-    <div class="card">
-      <h3 class="orange">Search Articles</h3>
-      <p>
-        Uses LLM-enhanced agents to expand user queries and search arXiv and CrossRef.
-        Returns matched papers with title, abstract, and source metadata.
-      </p>
-    </div>
-    <div class="card">
-      <h3 class="blue">Summary Generation</h3>
-      <p>
-        Extracts insights from academic papers and returns structured summaries.
-        Suitable for research documentation and export to Notion.
-      </p>
-    </div>
-    <div class="card">
-      <h3 class="purple">Code Generation</h3>
-      <p>
-        Converts insights into QuantConnect-ready Python strategies.
-        Syntax validation, logic modeling, and agent-based code refinement.
-      </p>
-    </div>
-  </div>
-
-  <div class="roadmap">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; text-align: left; max-width: 1000px; margin: 0 auto;">
-      <div>
-        <h2>Planned Improvements</h2>
-        <ul>
-          <li>Push generated code directly to QuantConnect for backtesting</li>
-          <li>Log-based reinforcement learning of agents</li>
-          <li>Integrate Notion into Chat with Fundamentals workflow</li>
-          <li>Integration of Mistral AI models</li>
-          <li>Add real-time scanning and signal generation workflows</li>
-          <li>Enable time series forecasting with interpretable models</li>
-        </ul>
-      </div>
-      <div>
-        <h2>Design Benchmarks</h2>
-        <ul style="list-style-position: outside; padding-left: 1em;">
-          <li><strong>Perplexity.ai –</strong> Reference for low-latency, relevant financial information retrieval</li>
-          <li><strong>Finviz –</strong> Visual benchmark for clean, interpretable market interfaces</li>
-          <li><strong>QuantCoderFS –</strong> 90% zero-compilation error rate in LLM-generated QuantConnect code</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-<h2 align="center">Powered By</h2>
-
-<p align="center">
-  <a href="https://eodhd.com?via=slmar" title="EODHD">
-    <img src="https://eodhistoricaldata.com/img/logo.png" alt="EODHD" height="40">
-  </a>
-  <a href="https://www.crewai.com" title="CrewAI">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Robot_icon.svg/64px-Robot_icon.svg.png" alt="CrewAI (robot icon)" height="40">
-  </a>
-  <a href="https://arxiv.org" title="arXiv">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/ArXiv_logo.png" alt="arXiv" height="40">
-  </a>
-  <a href="https://www.crossref.org" title="CrossRef">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Crossref_logo.svg" alt="CrossRef" height="40">
-  </a>
-</p>
-
-  <div class="footer">
-    &copy; 2025 Sebastien M. Laignel – SL Mar - QuantCoderFS. All rights reserved.
+  <div class="logo-container">
+    <a href="https://eodhd.com?via=slmar" target="_blank" title="EODHD" rel="noopener noreferrer">
+      <img src="https://eodhistoricaldata.com/img/logo.png" alt="EODHD" />
+    </a>
+    <a href="https://www.crewai.com" target="_blank" title="CrewAI" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Robot_icon.svg/64px-Robot_icon.svg.png" alt="CrewAI" />
+    </a>
+    <a href="https://arxiv.org" target="_blank" title="arXiv" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/ArXiv_logo.png" alt="arXiv" />
+    </a>
+    <a href="https://www.crossref.org" target="_blank" title="CrossRef" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Crossref_logo.svg" alt="CrossRef" />
+    </a>
   </div>
 
 </body>

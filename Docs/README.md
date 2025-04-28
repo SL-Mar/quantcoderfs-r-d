@@ -23,7 +23,7 @@ It simplifies fundamental analysis and equity research workflows.
 ## QuantCoderFS
 
 **Focus**: Strategy Research and Automation  
-**License**: Local-First (Access by Request)
+**License**: Under review
 
 QuantCoderFS is designed for strategy researchers and quant developers who want to automate the full research-to-code workflow.
 
@@ -73,12 +73,12 @@ You can support open research and development by:
 
 ## 🔓 Public Access Summary
 
-| Component               | Access      | Notes                                                                |
-|------------------------|-------------|-----------------------------------------------------------------------|
-| `QuantCoderFS` (app)   | Coming soon | Full-stack release planned                                            |
-| `QuantCoder` (CLI)     | Public      | [Legacy prototype](https://github.com/SL-Mar/quantcoder-legacy)       |
-| Chat with Fundamentals | Public      | GitHub repository available for local installation                    |
-| Documentation & Logs   | Public      | [Substack](https://quantcoderfs.substack.com)                         |
+| Component                 | Access                  | Notes |
+|----------------------------|--------------------------|-------|
+| QuantCoderFS (Platform)    | Private (Request Access)  | Full local-first platform for strategy research and automation (coming soon to broader release) |
+| QuantCoder (CLI Prototype) | Public (Open Source)      | [Legacy CLI prototype](https://github.com/SL-Mar/quantcoder-legacy) for early research workflows |
+| Chat with Fundamentals     | Public (Open Source)      | [GitHub repository and guide](https://quantcoderfs.substack.com/s/chat-with-fundamentals) available for local-first equity research installation |
+| Documentation & Research Logs | Public               | Published at [quantcoderfs.substack.com](https://quantcoderfs.substack.com) |
 
 ---
 

@@ -1,20 +1,39 @@
-# QuantCoderFS – Modular AI Workflows for Alpha Research  
-**Author: Sebastien M. Laignel**
+# QuantCoderFS Platform Overview
+
+QuantCoderFS is a modular AI platform designed to automate financial research workflows.  
+It currently powers two specialized applications:
 
 ---
 
-## What is QuantCoderFS?
+## Chat with Fundamentals
 
-**QuantCoderFS** is a local-first, modular AI platform for automating **alpha research** in quantitative finance. It orchestrates LLM agents, financial data APIs, and reproducible workflows to support:
+**Focus**: Equity Research Assistant  
+**License**: Open Source, Local-First
 
-- **Search & Retrieval** – academic papers, earnings transcripts, and financial media  
-- **Summarization** – context-aware insight extraction from structured/unstructured documents  
-- **Fundamental Analysis** – LLM-assisted interpretation of equities data  
-- **Strategy Code Generation** – Python output compatible with the **QuantConnect** platform  
+Chat with Fundamentals generates AI-powered executive summaries based on real-time financial data.  
+It simplifies fundamental analysis and equity research workflows.
 
-The platform is powered by a **FastAPI + CrewAI** backend and a **Next.js** frontend.  
-All workflows are designed to run locally — no login, no tracking, no cloud dependency.
+**Key Features:**
+- Executive summaries from financial metrics, news, and historical prices
+- Monte Carlo simulation, Value at Risk (VaR) estimation
+- Single-ticker and comparative multi-ticker analysis
+- Fully local-first and user-owned API key setup
+- Built with CrewAI, LangChain, FastAPI, and EODHD APIs
 
+## QuantCoderFS
+
+**Focus**: Strategy Research and Automation  
+**License**: Local-First (Access by Request)
+
+QuantCoderFS is designed for strategy researchers and quant developers who want to automate the full research-to-code workflow.
+
+**Key Features:**
+- Search and summarization of academic papers, earnings calls, and financial media
+- Executive insight extraction from structured and unstructured sources
+- Automated QuantConnect strategy code generation (Python)
+- Alpha signal validation and performance analysis
+- Modular CrewAI architecture, built for local-first deployment
+  
 > _This repository documents the architecture, components, and development of the platform._  
 > The [legacy CLI prototype](https://github.com/SL-Mar/quantcoder-legacy) remains available for early contributors.
 
@@ -54,10 +73,11 @@ You can support open research and development by:
 
 ## 🔓 Public Access Summary
 
-| Component               | Access      | Notes                                                                 |
+| Component               | Access      | Notes                                                                |
 |------------------------|-------------|-----------------------------------------------------------------------|
-| `QuantCoderFS` (app)   | Coming soon | Full-stack local-first release planned for public distribution        |
-| `QuantCoder` (CLI)     | Public      | [Legacy prototype](https://github.com/SL-Mar/quantcoder-legacy)      |
+| `QuantCoderFS` (app)   | Coming soon | Full-stack release planned                                            |
+| `QuantCoder` (CLI)     | Public      | [Legacy prototype](https://github.com/SL-Mar/quantcoder-legacy)       |
+| Chat with Fundamentals | Public      | GitHub repository available for local installation                    |
 | Documentation & Logs   | Public      | [Substack](https://quantcoderfs.substack.com)                         |
 
 ---

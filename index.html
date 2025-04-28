@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>QuantCoderFS – Modular AI Workflows for Alpha Research</title>
-  <meta name="description" content="QuantCoderFS – A local-first research platform for AI-assisted alpha research in finance." />
+  <title>QuantCoderFS – Modular AI Workflows for Financial Research</title>
+  <meta name="description" content="QuantCoderFS – A modular, local-first platform for strategy research and AI-assisted alpha discovery." />
   <meta property="og:title" content="QuantCoderFS – Modular AI Workflows for Alpha Research" />
   <meta property="og:description" content="Local-first. No login. No cloud." />
   <link rel="icon" href="favicon.ico" />
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -58,11 +59,11 @@
       text-align: center; font-size: 1.15rem; color: var(--muted); margin-bottom: 2.5rem;
     }
 
-    .features {
+    .grid-columns {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
+      margin-top: 3.5rem;
     }
 
     .card {
@@ -71,36 +72,41 @@
       border: 1px solid var(--border);
       border-radius: 10px;
       transition: transform .2s, box-shadow .2s;
+      text-align: center;
     }
     .card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow);
     }
 
-    .card h3 { margin-bottom: .75rem; font-size: 1.25rem; }
+    .card img {
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      margin-bottom: .75rem;
+      font-size: 1.25rem;
+      color: var(--accent);
+    }
+
     .card p { font-size: .95rem; }
 
-    .blue   { color: #58a6ff; }
-    .orange { color: #f78166; }
-    .green  { color: #3fb950; }
-    .purple { color: #bc8cff; }
-
-    .grid-columns {
+    section.features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
-      margin-top: 3.5rem;
+      margin-top: 3rem;
     }
 
-    ul { list-style: none; padding-left: 1rem; }
-    li + li { margin-top: .5rem; }
-    li::before { content: "• "; color: var(--accent); margin-right: .25rem; }
+    section.features .card h3.orange { color: #f78166; }
+    section.features .card h3.green { color: #3fb950; }
+    section.features .card h3.purple { color: #bc8cff; }
 
     .powered-heading {
       text-align: center;
       font-size: 1.6rem;
-      margin-top: 4rem;
-      margin-bottom: 1rem;
+      margin-top: 5rem;
+      margin-bottom: 2rem;
       color: var(--accent);
     }
 
@@ -132,79 +138,78 @@
 
     html { scroll-behavior: smooth; }
   </style>
+
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="#">Home</a>
-      <a href="https://quantcoderfs.substack.com" target="_blank">Substack</a>
-      <a href="https://github.com/SL-Mar" target="_blank">GitHub</a>
-      <a href="https://open.substack.com/pub/quantcoderfs/p/full-demo-quantcoder-fs-ai-quant" target="_blank">Demo Video</a>
-      <a href="mailto:smr.laignel@gmail.com">Contact</a>
-    </nav>
-  </header>
 
-  <main>
-    <h1>QuantCoderFS</h1>
-    <p class="subtitle">
-      Modular AI workflows for alpha research in finance.<br>Local-first. No login. No cloud.
-    </p>
+<header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="https://quantcoderfs.substack.com" target="_blank">Substack</a>
+    <a href="https://github.com/SL-Mar" target="_blank">GitHub</a>
+    <a href="https://open.substack.com/pub/quantcoderfs/p/full-demo-quantcoder-fs-ai-quant" target="_blank">Demo Video</a>
+    <a href="mailto:smr.laignel@gmail.com">Contact</a>
+  </nav>
+</header>
 
-    <section class="features">
-      <div class="card">
-        <h3 class="blue">Chat with Fundamentals</h3>
-        <p>Transforms a natural-language financial query into a professional research note. The flow orchestrates structured API calls and LLMs to analyze metrics, price history, and news.</p>
-      </div>
-      <div class="card">
-        <h3 class="orange">Search Articles</h3>
-        <p>Finds academic papers by expanding the user query, inferring arXiv categories, and pulling from CrossRef and arXiv using LLM-enhanced agents.</p>
-      </div>
-      <div class="card">
-        <h3 class="green">Summary Generation</h3>
-        <p>Analyzes full academic articles to produce detailed, structured summaries in Markdown format—ideal for research documentation and knowledge sharing.</p>
-      </div>
-      <div class="card">
-        <h3 class="purple">Code Generation</h3>
-        <p>Translates a plain-text trading strategy into validated Python code for QuantConnect. Uses multiple agents for parsing, generation, and syntax validation.</p>
-      </div>
-    </section>
+<main>
 
-    <div class="grid-columns">
-      <div>
-        <h3 class="blue">Planned Improvements</h3><hr style="border-color: var(--border); margin: 0.75rem 0;">
-        <ul>
-          <li>Push generated code directly to QuantConnect for back-testing</li>
-          <li>Log-based reinforcement learning of agents</li>
-          <li>Integrate Notion into Chat with Fundamentals workflow</li>
-          <li>Add real-time scanning and signal generation workflows</li>
-          <li>Enable time-series forecasting with interpretable models</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="blue">Design Benchmarks</h3><hr style="border-color: var(--border); margin: 0.75rem 0;">
-        <ul>
-          <li><strong>Perplexity.ai</strong> – low-latency, relevant financial information retrieval</li>
-          <li><strong>Finviz</strong> – clean, interpretable market interfaces</li>
-          <li><strong>QuantCoderFS</strong> – 90% zero-compilation error rate in LLM-generated QuantConnect code</li>
-        </ul>
-      </div>
+  <h1>QuantCoderFS R&D</h1>
+  <p class="subtitle">
+    Modular AI workflows for equity and strategy research.<br>Local-first. No login. No cloud.
+  </p>
+
+  <div class="grid-columns">
+    <div class="card">
+      <img src="logocwf.png" alt="Chat with Fundamentals Logo" width="80">
+      <h3>Chat with Fundamentals</h3>
+      <p>Standalone AI-driven fundamental analysis application.  
+      Generates executive summaries, financial insights, and comparative research notes using real-time financial data.</p>
+      <a href="https://quantcoderfs.substack.com/s/chat-with-fundamentals" target="_blank" style="display: inline-block; margin-top: 1rem;">Learn More ➔</a>
     </div>
 
-    <h2 class="powered-heading">Powered&nbsp;By</h2>
-    <div class="logos">
-      <a href="https://eodhd.com?via=slmar" target="_blank"><img src="https://eodhistoricaldata.com/img/logo.png" alt="EODHD" /></a>
-      <a href="https://www.crewai.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Robot_icon.svg/64px-Robot_icon.svg.png" alt="CrewAI" /></a>
-      <a href="https://arxiv.org" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/ArXiv_logo.png" alt="arXiv" /></a>
-      <a href="https://www.crossref.org" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Crossref_logo.svg" alt="CrossRef" /></a>
+    <div class="card">
+      <img src="logo.png" alt="QuantCoderFS Logo" width="80">
+      <h3>QuantCoderFS</h3>
+      <p>Modular strategy research platform.  
+      Automates article search, research summarization, code generation for trading strategies, and alpha performance validation.</p>
+      <a href="https://quantcoderfs.substack.com" target="_blank" style="display: inline-block; margin-top: 1rem;">Learn More ➔</a>
     </div>
-  </main>
+  </div>
 
-  <footer>
-    © 2025 Sebastien M. Laignel – SL Mar · QuantCoderFS. All rights reserved.
-  </footer>
+  <h2 class="powered-heading">QuantCoderFS Core Modules</h2>
+
+  <section class="features">
+    <div class="card">
+      <h3 class="orange">Search Articles</h3>
+      <p>Expands queries and retrieves relevant financial papers and articles from CrossRef and arXiv using LLM-enhanced agents.</p>
+    </div>
+    <div class="card">
+      <h3 class="green">Summary Generation</h3>
+      <p>Processes full research articles to produce detailed, structured summaries for financial research documentation.</p>
+    </div>
+    <div class="card">
+      <h3 class="purple">Code Generation</h3>
+      <p>Translates trading strategy ideas into validated, production-ready Python code for QuantConnect backtesting and live trading.</p>
+    </div>
+  </section>
+
+  <h2 class="powered-heading">Powered By</h2>
+
+  <div class="logos">
+    <a href="https://eodhd.com?via=slmar" target="_blank"><img src="https://eodhistoricaldata.com/img/logo.png" alt="EODHD" /></a>
+    <a href="https://www.crewai.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Robot_icon.svg/64px-Robot_icon.svg.png" alt="CrewAI" /></a>
+    <a href="https://arxiv.org" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/ArXiv_logo.png" alt="arXiv" /></a>
+    <a href="https://www.crossref.org" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Crossref_logo.svg" alt="CrossRef" /></a>
+  </div>
+
+</main>
+
+<footer>
+  © 2025 Sebastien M. Laignel – SL Mar · QuantCoderFS. All rights reserved.
+</footer>
+
 </body>
 </html>
-
-
 
 

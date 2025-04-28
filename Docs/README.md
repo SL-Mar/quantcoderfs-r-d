@@ -75,7 +75,7 @@ You can support open research and development by:
 
 | Component                 | Access                  | Notes |
 |----------------------------|--------------------------|-------|
-| QuantCoderFS (Platform)    | Private (Request Access)  | Full local-first platform for strategy research and automation (coming soon to broader release) |
+| QuantCoderFS (Platform)    | TBD                      | Full platform for strategy research and automation (under development) |
 | QuantCoder (CLI Prototype) | Public (Open Source)      | [Legacy CLI prototype](https://github.com/SL-Mar/quantcoder-legacy) for early research workflows |
 | Chat with Fundamentals     | Public (Open Source)      | [GitHub repository and guide](https://quantcoderfs.substack.com/s/chat-with-fundamentals) available for local-first equity research installation |
 | Documentation & Research Logs | Public               | Published at [quantcoderfs.substack.com](https://quantcoderfs.substack.com) |

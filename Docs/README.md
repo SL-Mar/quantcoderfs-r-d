@@ -1,9 +1,17 @@
+<p align="center">
+  <img src="logo.png" alt="QuantCoderFS Logo" width="120"/>
+</p>
+
 # QuantCoderFS Platform Overview
 
 QuantCoderFS is a modular AI platform designed to automate financial research workflows.  
 It currently powers two specialized applications:
 
 ---
+
+<p align="center">
+  <img src="logocwf.png" alt="Chat with Fundamentals Logo" width="100"/>
+</p>
 
 ## Chat with Fundamentals
 
@@ -19,6 +27,12 @@ It simplifies fundamental analysis and equity research workflows.
 - Single-ticker and comparative multi-ticker analysis
 - Fully local-first and user-owned API key setup
 - Built with CrewAI, LangChain, FastAPI, and EODHD APIs
+
+---
+
+<p align="center">
+  <img src="logo.png" alt="QuantCoderFS Logo" width="100"/>
+</p>
 
 ## QuantCoderFS
 
@@ -84,3 +98,4 @@ You can support open research and development by:
 
 ##  
 _End of documentation._
+

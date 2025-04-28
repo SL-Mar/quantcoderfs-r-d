@@ -1,7 +1,7 @@
-# QuantCoderFS Platform Overview
+# QuantCoderFS R&D 
 
-QuantCoderFS is a modular AI platform designed to automate financial research workflows.  
-It currently powers two specialized applications:
+QuantCoderFS R&D is an independent research initiative built around a modular AI platform designed to automate financial research workflows.
+The platform currently powers two specialized applications:
 
 ---
 

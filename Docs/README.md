@@ -35,14 +35,13 @@ It simplifies fundamental analysis and equity research workflows.
 **Focus**: Strategy Research and Automation  
 **License**: Under review
 
-QuantCoderFS is designed for strategy researchers and quant developers who want to automate the full research-to-code workflow.
+QuantCoderFS is designed for quant developers who want to automate the full research-to-code workflow.
 
 **Key Features:**
 - Search and summarization of academic papers, earnings calls, and financial media
 - Executive insight extraction from structured and unstructured sources
 - Automated QuantConnect strategy code generation (Python)
-- Alpha signal validation and performance analysis
-- Modular CrewAI architecture, built for local-first deployment
+- Modular CrewAI architecture
   
 > _This repository documents the architecture, components, and development of the platform._  
 > The [legacy CLI prototype](https://github.com/SL-Mar/quantcoder-legacy) remains available for users awaiting the FS version. 
@@ -67,7 +66,8 @@ This repository contains:
 **▶ Watch the Full Demo: QuantCoderFS – AI Quant Research Lab**  
 [🔗 View on Substack](https://open.substack.com/pub/quantcoderfs/p/full-demo-quantcoder-fs-ai-quant?r=5hdac8&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false)
 
-> This 5-minute walkthrough covers the architecture, research workflows, and coding capabilities of the QuantCoderFS platform.
+> This 5-minute walkthrough showcases the architecture, research workflows, and coding capabilities of the QuantCoderFS platform.
+> QuantCoderFS is continuously evolving, aiming to keep pace with the rapid advancements in AI and quantitative research.
 
 ---
 

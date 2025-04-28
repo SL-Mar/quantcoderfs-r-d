@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="logo.png" alt="QuantCoderFS Logo" width="120"/>
-</p>
-
 # QuantCoderFS Platform Overview
 
 QuantCoderFS is a modular AI platform designed to automate financial research workflows.  
@@ -49,7 +45,7 @@ QuantCoderFS is designed for strategy researchers and quant developers who want 
 - Modular CrewAI architecture, built for local-first deployment
   
 > _This repository documents the architecture, components, and development of the platform._  
-> The [legacy CLI prototype](https://github.com/SL-Mar/quantcoder-legacy) remains available for early contributors.
+> The [legacy CLI prototype](https://github.com/SL-Mar/quantcoder-legacy) remains available for users awaiting the FS version. 
 
 ---
 

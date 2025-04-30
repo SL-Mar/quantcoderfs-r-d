@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>QuantCoderFS Suite – AI Workflows for Equity and Strategy Research</title>
   <meta name="description" content="QuantCoderFS Suite: Modular AI tools for equity analysis and strategy automation. Local-first. Research-grade." />
-  <meta property="og:title" content="QuantCoderFS Suite – AI Research Tools" />
+  <meta property="og:title" content="QuantCoderFS – AI Research Tools" />
   <meta property="og:description" content="AI workflows for equity analysis and strategy automation. Local-first. Research-grade." />
   <link rel="icon" href="Docs/favicon.ico" />
 
@@ -88,11 +88,38 @@
     .card.chat h3 { color: var(--blue); }
     .card.chat:hover { box-shadow: 0 6px 20px rgba(88, 166, 255, 0.3); }
 
-    .card.qc h3 { color: var(--green); }
+    .card.qc h3 { color: var(--blue); }
     .card.qc:hover { box-shadow: 0 6px 20px rgba(63, 185, 80, 0.3); }
 
-    .card.search h3 { color: var(--purple); }
+    .card.search h3 { color: var(--blue); }
     .card.search:hover { box-shadow: 0 6px 20px rgba(188, 140, 255, 0.3); }
+
+    section.streams {
+      margin-top: 5rem;
+    }
+
+    .streams-heading {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--blue);
+    }
+
+    .streams-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .stream-card {
+      background: var(--surface);
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1rem;
+      color: var(--text);
+    }
 
     footer {
       margin-top: 4rem;
@@ -127,7 +154,7 @@
       <img src="Docs/logocwf.png" alt="Chat with Fundamentals Logo" width="80" />
       <h3>Chat with Fundamentals</h3>
       <p class="status">Released – April 2025</p>
-      <p>AI-powered fundamental analysis and stock analytics. Interact with EODHD data and news using natural language.</p>
+      <p>AI-powered fundamental analysis and stock analytics. Interact with EODHD historical, fundamental data and news using natural language.</p>
       <a href="https://quantcoderfs.substack.com/s/chat-with-fundamentals" target="_blank">Learn More ➔</a>
     </div>
 
@@ -135,22 +162,39 @@
       <img src="Docs/logo.png" alt="QuantCoderFS Logo" width="80" />
       <h3>QuantCoderFS</h3>
       <p class="status">Planned – September 2025</p>
-      <p>Generate trading strategies from academic papers. Output is production-ready Python code for QuantConnect.</p>
+      <p>Generate Python trading algorithms for QuantConnect from academic papers.</p>
       <a href="https://quantcoderfs.substack.com/s/development-updates-and-technical" target="_blank">Learn More ➔</a>
     </div>
 
     <div class="card search">
-      <img src="Docs/search.png" alt="Search Engine Logo" width="80" />
       <h3>Search & Summary Engine</h3>
       <p class="status">Planned – October 2025</p>
       <p>Fetches academic papers and articles, summarizes content, and extracts actionable insights.</p>
-      <a href="#" target="_blank">Learn More ➔</a>
+      <a href="#">Learn More ➔</a>
     </div>
   </div>
+
+  <section class="streams">
+    <h2 class="streams-heading">Research Streams</h2>
+    <div class="streams-grid">
+      <div class="stream-card">
+        <a href="https://quantcoderfs.substack.com/s/equity-research" target="_blank">Equity Research</a>
+      </div>
+      <div class="stream-card">
+        <a href="https://quantcoderfs.substack.com/s/strategies" target="_blank">Strategies</a>
+      </div>
+      <div class="stream-card">
+        <a href="https://quantcoderfs.substack.com/s/development-updates-and-technical" target="_blank">QuantCoderFS</a>
+      </div>
+      <div class="stream-card">
+        <a href="https://quantcoderfs.substack.com/s/chat-with-fundamentals" target="_blank">Chat with Fundamentals</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
-  © 2025 Sebastien M. Laignel – SL Mar · QuantCoderFS. All rights reserved.
+  © 2025 SL Mar · QuantCoderFS. All rights reserved.
 </footer>
 </body>
 </html>

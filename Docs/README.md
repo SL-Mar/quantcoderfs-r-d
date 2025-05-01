@@ -5,7 +5,14 @@ The platform currently powers two specialized applications:
 
 ---
 
-<div align="center"><strong>Focus</strong>: Equity Research Assistant<br><strong>License</strong>: Open Source, Local-First</div>
+<p align="center">
+  <img src="logocwf.png" alt="Chat with Fundamentals Logo" width="100"/>
+</p>
+
+<h2 align="center">Chat with Fundamentals</h2>
+
+**Focus**: Equity Research Assistant  
+**License**: Open Source, Local-First
 
 Chat with Fundamentals generates AI-powered executive summaries based on real-time financial data.\
 It simplifies fundamental analysis and equity research workflows.
@@ -20,7 +27,14 @@ It simplifies fundamental analysis and equity research workflows.
 
 ---
 
-<div align="center"><strong>Focus</strong>: Strategy Research and Automation<br><strong>License</strong>: Under review</div>
+<p align="center">
+  <img src="logo.png" alt="QuantCoderFS Logo" width="100"/>
+</p>
+
+<h2 align="center">QuantCoderFS</h2>
+
+**Focus**: Strategy Research and Automation  
+**License**: Under review
 
 QuantCoderFS is designed for quant developers who want to automate the full research-to-code workflow.
 
@@ -36,21 +50,21 @@ QuantCoderFS is designed for quant developers who want to automate the full rese
 
 ---
 
-<div align="center"><strong>📚 Documentation & Research Logs</strong></div>
+<h2 align="center">📚 Documentation & Research Logs</h2>
 
 All devlogs, research updates, and annotated workflows are published here:\
 🔗 [quantcoderfs.substack.com](https://quantcoderfs.substack.com)
 
 This repository contains:
 
-- Research notes and working notebooks
-- Flow designs and system diagrams
-- Validation tests and prototyping outputs
+- Research notes and working notebooks  
+- Flow designs and system diagrams  
+- Validation tests and prototyping outputs  
 - Links to the app components and backend agents
 
 ---
 
-<div align="center"><strong>📟 Full Demo Video</strong></div>
+<h2 align="center">📟 Full Demo Video</h2>
 
 **▶ Watch the Full Demo: QuantCoderFS – AI Quant Research Lab**\
 [🔗 View on Substack](https://open.substack.com/pub/quantcoderfs/p/full-demo-quantcoder-fs-ai-quant?r=5hdac8&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false)
@@ -60,20 +74,20 @@ This repository contains:
 
 ---
 
-<div align="center"><strong>🤝 How to Support the Project</strong></div>
+<h2 align="center">🤝 How to Support the Project</h2>
 
 QuantCoderFS is developed independently — without institutional or commercial backing.\
 You can support open research and development by:
 
-- Becoming a **GitHub Sponsor**
+- Becoming a **GitHub Sponsor**  
 - Subscribing to the **paid tier** on [Substack](https://quantcoderfs.substack.com)
 
 ---
 
-<div align="center"><strong>🔓 Public Access Summary</strong></div>
+<h2 align="center">🔓 Public Access Summary</h2>
 
 | Component                     | Access               | Notes                                                                                                                                            |
-| ----------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+|------------------------------|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
 | QuantCoderFS (Platform)       | TBD                  | Full platform for strategy research and automation (under development)                                                                           |
 | QuantCoder (CLI Prototype)    | Public (Open Source) | [Legacy CLI prototype](https://github.com/SL-Mar/quantcoder-legacy) for early research workflows                                                 |
 | Chat with Fundamentals        | Public (Open Source) | [GitHub repository and guide](https://quantcoderfs.substack.com/s/chat-with-fundamentals) available for local-first equity research installation |
@@ -82,4 +96,5 @@ You can support open research and development by:
 ---
 
 ##
+
 

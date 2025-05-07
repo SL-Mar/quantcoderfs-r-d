@@ -123,6 +123,22 @@
       color: var(--text);
     }
 
+    .github-badge-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .github-badge {
+      height: 48px;
+      transition: transform 0.2s ease;
+    }
+
+    .github-badge:hover {
+      transform: scale(1.05);
+    }
+
     footer {
       margin-top: 4rem;
       padding: 2rem 1rem 3rem;
@@ -139,7 +155,6 @@
 <body>
 <header>
   <nav>
-    <a href="https://github.com/SL-Mar" target="_blank">GitHub</a>
     <a href="https://open.substack.com/pub/quantcoderfs/p/full-demo-quantcoder-fs-ai-quant" target="_blank">Demo video</a>
   </nav>
 </header>
@@ -194,13 +209,14 @@
       </div>
     </div>
   </section>
+
+  <div class="github-badge-container">
+    <a href="https://github.com/SL-Mar" target="_blank" rel="noopener noreferrer">
+      <img src="Docs/logoOS.png" alt="Open-source on GitHub" class="github-badge" />
+    </a>
+  </div>
 </main>
 
-<a href="https://github.com/SL-Mar" target="_blank" rel="noopener noreferrer">
-  <img src="Docs/logoOS.png" alt="Open-source on GitHub" style="height: 40px;" />
-</a>
-
-  
 <footer>
   © 2025 SL Mar · QuantCoderFS R&D. Built with care, powered by AI.
 </footer>

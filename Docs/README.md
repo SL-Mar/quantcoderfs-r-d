@@ -1,7 +1,7 @@
 # <div align="center">QuantCoderFS R&D</div>
 
 QuantCoderFS R&D is an independent quantitative research initiative, powered by LLM and custom automation.\
-The platform currently powers two specialized applications:
+The platform currently powers three specialized applications:
 
 ---
 

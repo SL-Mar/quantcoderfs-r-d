@@ -12,7 +12,7 @@ The platform currently powers two specialized applications:
 <h2 align="center">Chat with Fundamentals</h2>
 
 **Focus**: Equity Research Assistant  
-**License**: Open Source, Local-First
+**License**: Open-Source, Local-First
 
 Chat with Fundamentals generates AI-powered executive summaries based on real-time financial data.\
 It simplifies fundamental analysis and equity research workflows.
@@ -34,13 +34,12 @@ It simplifies fundamental analysis and equity research workflows.
 <h2 align="center">QuantCoderFS</h2>
 
 **Focus**: Strategy Research and Automation  
-**License**: Under review
+**License**: Open-Source, Local-First
 
 QuantCoderFS is designed for quant developers who want to automate the full research-to-code workflow.
 
 **Key Features:**
 
-- Search and summarization of academic papers, earnings calls, and financial media
 - Executive insight extraction from structured and unstructured sources
 - Automated QuantConnect strategy code generation (Python)
 - Modular CrewAI architecture
@@ -50,27 +49,34 @@ QuantCoderFS is designed for quant developers who want to automate the full rese
 
 ---
 
+<p align="center">
+  <img src="logoQA.png" alt="Quantagents Logo" width="100"/>
+</p>
+
+<h2 align="center">Quantagents</h2>
+
+**Focus**: Smolagents for finance 
+**License**: TBA
+
+A smolagents Lab with a chat interface.
+
+**Key Features:**
+
+- Chat interface
+- Modular Smolagents architecture
+
 <h2 align="center">📚 Documentation & Research Logs</h2>
+
+---
 
 All devlogs, research updates, and annotated workflows are published here:\
 🔗 [quantcoderfs.substack.com](https://quantcoderfs.substack.com)
 
 This repository contains:
 
-- Research notes and working notebooks  
-- Flow designs and system diagrams  
-- Validation tests and prototyping outputs  
-- Links to the app components and backend agents
-
----
-
-<h2 align="center">📟 Full Demo Video</h2>
-
-**▶ Watch the Full Demo: QuantCoderFS – AI Quant Research Lab**\
-[🔗 View on Substack](https://open.substack.com/pub/quantcoderfs/p/full-demo-quantcoder-fs-ai-quant?r=5hdac8&utm_campaign=post&utm_medium=web&showWelcomeOnShare=false)
-
-> This 5-minute walkthrough showcases the architecture, research workflows, and coding capabilities of the QuantCoderFS platform.\
-> QuantCoderFS is continuously evolving, aiming to keep pace with the rapid advancements in AI and quantitative research.
+- Equity research notes
+- Strategy research notes
+- Development and releases notes
 
 ---
 
@@ -88,10 +94,11 @@ You can support open research and development by:
 
 | Component                     | Access               | Notes                                                                                                                                            |
 |------------------------------|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| QuantCoderFS (Platform)       | TBD                  | Full platform for strategy research and automation (under development)                                                                           |
-| QuantCoder (CLI Prototype)    | Public (Open Source) | [Legacy CLI prototype](https://github.com/SL-Mar/quantcoder-legacy) for early research workflows                                                 |
-| Chat with Fundamentals        | Public (Open Source) | [GitHub repository and guide](https://quantcoderfs.substack.com/s/chat-with-fundamentals) available for local-first equity research installation |
-| Documentation & Research Logs | Public               | Published at [quantcoderfs.substack.com](https://quantcoderfs.substack.com)                                                                      |
+| QuantCoderFS (Application)    | Public (Open Source) | [Full-stack application](https://github.com/SL-Mar/quantcoderfs) LLM-powered trading strategy generation for QuantConnect                                                                         |
+| QuantCoder (CLI Prototype)    | Public (Open Source) | [Legacy CLI prototype](https://github.com/SL-Mar/quantcoder-legacy) Legacy version of the application (CLI and GUI)                                  |
+| Chat with Fundamentals        | Public (Open Source) | [Full-stack application](https://github.com/SL-Mar/chat-with-fundamentals) LLM powered fundamental analysis |
+| Quantagents                   | Development          | [Full-stack application](https://github.com/SL-Mar/quantagents) General purpose chat with smolagents interface |
+| Research logs                 | Public               | Published at [quantcoderfs.substack.com](https://quantcoderfs.substack.com) Equity and strategy research behind paywall                                                                      |
 
 ---
 

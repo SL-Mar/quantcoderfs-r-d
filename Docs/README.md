@@ -1,7 +1,7 @@
 # <div align="center">QuantCoderFS R&D</div>
 
 QuantCoderFS R&D is an independent quantitative research initiative, powered by LLM and custom automation.\
-The platform currently powers three specialized applications:
+The platform currently powers two specialized applications:
 
 ---
 
@@ -49,26 +49,6 @@ QuantCoderFS is designed for quant developers who want to automate the full rese
 
 ---
 
-<p align="center">
-  <img src="logoQA.png" alt="Quantagents Logo" width="100"/>
-</p>
-
-<h2 align="center">Quantagents</h2>
-
-**Focus**: Smolagents for finance 
-**License**: TBA
-
-A smolagents Lab with a chat interface.
-
-**Key Features:**
-
-- Chat interface
-- Modular Smolagents architecture
-
-<h2 align="center">📚 Documentation & Research Logs</h2>
-
----
-
 All devlogs, research updates, and annotated workflows are published here:\
 🔗 [quantcoderfs.substack.com](https://quantcoderfs.substack.com)
 
@@ -97,7 +77,6 @@ You can support open research and development by:
 | QuantCoderFS (Application)    | Public (Open Source) | [Full-stack application](https://github.com/SL-Mar/quantcoderfs) LLM-powered trading strategy generation for QuantConnect                                                                         |
 | QuantCoder (CLI Prototype)    | Public (Open Source) | [Legacy CLI prototype](https://github.com/SL-Mar/quantcoder-legacy) Legacy version of the application (CLI and GUI)                                  |
 | Chat with Fundamentals        | Public (Open Source) | [Full-stack application](https://github.com/SL-Mar/chat-with-fundamentals) LLM powered fundamental analysis |
-| Quantagents                   | Development          | [Full-stack application](https://github.com/SL-Mar/quantagents) General purpose chat with smolagents interface |
 | Research logs                 | Public               | Published at [quantcoderfs.substack.com](https://quantcoderfs.substack.com) Equity and strategy research behind paywall                                                                      |
 
 ---

@@ -4,12 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>QuantCoderFS R&D – AI Research Platform</title>
-  <meta name="description" content="QuantCoderFS R&D: LLM-powered equity research and strategy automation." />
+  <meta name="description" content="QuantCoderFS R&D: LLM-powered equity research and systematic strategy automation." />
   <meta property="og:title" content="QuantCoderFS R&D – AI Research Platform" />
   <link rel="icon" href="Docs/favicon.ico" />
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --bg: #0d1117;
@@ -20,7 +24,6 @@
       --muted: #8b949e;
       --blue: #58a6ff;
       --green: #3fb950;
-      --purple: #bc8cff;
       --shadow: 0 4px 12px rgba(0,0,0,.2);
     }
 
@@ -30,30 +33,40 @@
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
       background: var(--surface-alt);
-      position: sticky; top: 0; z-index: 100;
+      position: sticky;
+      top: 0;
+      z-index: 100;
       box-shadow: var(--shadow);
     }
 
     nav {
-      max-width: 1100px; margin: auto;
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: .75rem 2rem; padding: 1rem;
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem 2rem;
+      padding: 1rem;
     }
 
     a {
       color: var(--blue);
       text-decoration: none;
-      transition: color .2s ease;
+      transition: color 0.2s ease;
     }
     a:hover, a:focus-visible {
       color: var(--green);
     }
 
     main {
+      flex-grow: 1;
       max-width: 1100px;
       margin: auto;
       padding: 3rem 1rem 4rem;
@@ -63,7 +76,7 @@
       font-size: clamp(2.5rem, 5vw, 3rem);
       text-align: center;
       color: var(--blue);
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
 
     .subtitle {
@@ -71,6 +84,7 @@
       font-size: 1.15rem;
       color: var(--muted);
       margin-bottom: 3rem;
+      line-height: 1.4;
     }
 
     .grid-columns {
@@ -85,85 +99,40 @@
       border: 1px solid var(--border);
       border-radius: 10px;
       text-align: center;
-      transition: transform .25s ease, box-shadow .25s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .card img {
       margin-bottom: 1rem;
+      align-self: center;
     }
 
     .card h3 {
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
       font-size: 1.25rem;
+      color: var(--blue);
     }
 
     .card p {
-      font-size: .95rem;
-      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
       color: var(--muted);
+      flex-grow: 1;
     }
 
     .card .status {
-      font-size: .85rem;
+      font-size: 0.85rem;
       color: var(--green);
       margin-bottom: 1rem;
+      font-weight: 600;
     }
 
     .card:hover {
       transform: translateY(-6px) scale(1.03);
-    }
-
-    .card.chat h3,
-    .card.qc h3,
-    .card.search h3,
-    .card.ar h3 {
-      color: var(--blue);
-    }
-
-    .card.chat:hover {
-      box-shadow: 0 6px 20px rgba(88, 166, 255, 0.3);
-    }
-
-    .card.qc:hover {
-      box-shadow: 0 6px 20px rgba(63, 185, 80, 0.3);
-    }
-
-    .card.search:hover {
-      box-shadow: 0 6px 20px rgba(188, 140, 255, 0.3);
-    }
-
-    .card.ar:hover {
-      box-shadow: 0 6px 20px rgba(88, 166, 255, 0.3);
-    }
-
-    section.streams {
-      margin-top: 5rem;
-    }
-
-    .streams-heading {
-      text-align: center;
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      color: var(--blue);
-    }
-
-    .streams-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-    }
-
-    .stream-card {
-      background: var(--surface);
-      padding: 1.25rem;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      text-align: center;
-      font-size: 1rem;
-    }
-
-    .stream-card a {
-      color: var(--text);
+      box-shadow: 0 6px 20px var(--shadow);
     }
 
     .github-badge-container {
@@ -185,7 +154,7 @@
       margin-top: 4rem;
       padding: 2rem 1rem 3rem;
       text-align: center;
-      font-size: .85rem;
+      font-size: 0.85rem;
       color: var(--muted);
       border-top: 1px solid var(--border);
     }
@@ -199,49 +168,47 @@
 <body>
   <header>
     <nav>
-      <a href="https://quantcoderfs.substack.com/p/chat-with-fundamentals-video-demonstration" target="_blank">
+      <a href="https://quantcoderfs.substack.com/p/chat-with-fundamentals-video-demonstration" target="_blank" rel="noopener noreferrer">
         Chat with Fundamentals Demo Video
       </a>
     </nav>
   </header>
 
   <main>
-    <h1>QuantCoderFS R&D</h1>
+    <h1>QuantCoderFS R&amp;D</h1>
     <p class="subtitle">
-      Quantitative analysis tools powered by custom LLM agents.
-      <br />Explore development on Substack.
+      Quantitative analysis tools powered by custom LLM agents.<br />
+      Explore development and strategy research on <a href="https://quantcoderfs.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>.
     </p>
 
     <div class="grid-columns">
-      <div class="card chat">
-        <img src="Docs/logocwf.png" alt="Chat with Fundamentals Logo" width="80" />
-        <h3>Chat with Fundamentals</h3>
-        <p class="status">Released – April 2025</p>
-        <p>LLM-powered equity research using EOD, fundamental data and news from EODHD APIs. Open-source, local-first.</p>
-        <a href="https://quantcoderfs.substack.com/s/chat-with-fundamentals" target="_blank">Read on Substack ➔</a>
-      </div>
+      <article class="card chat" aria-labelledby="chat-title">
+        <img src="Docs/logocwf.png" alt="Chat with Fundamentals Logo" width="80" height="80" />
+        <h3 id="chat-title">Chat with Fundamentals</h3>
+        <p class="status" aria-label="Release date">Released – April 2025</p>
+        <p>LLM-powered equity research leveraging end-of-day, fundamental, and news data from EODHD APIs. Open-source and local-first approach.</p>
+        <a href="https://quantcoderfs.substack.com/s/chat-with-fundamentals" target="_blank" rel="noopener noreferrer">Read on Substack ➔</a>
+      </article>
 
-      <div class="card qc">
-        <img src="Docs/logo.png" alt="QuantCoderFS Logo" width="80" />
-        <h3>QuantCoderFS</h3>
-        <p class="status">Released - May 2025</p>
-        <p>Turns quantitative finance articles into QuantConnect strategy code. Modular CrewAI-based coding engine.</p>
-        <a href="https://quantcoderfs.substack.com/s/development-updates-and-technical" target="_blank">Read on Substack ➔</a>
-      </div>
+      <article class="card qc" aria-labelledby="qc-title">
+        <img src="Docs/logo.png" alt="QuantCoderFS Logo" width="80" height="80" />
+        <h3 id="qc-title">QuantCoderFS</h3>
+        <p class="status" aria-label="Release date">Released – May 2025</p>
+        <p>Transforms quantitative finance papers into executable QuantConnect strategies via a modular CrewAI coding engine, accelerating strategy design.</p>
+        <a href="https://quantcoderfs.substack.com/s/development-updates-and-technical" target="_blank" rel="noopener noreferrer">Read on Substack ➔</a>
+      </article>
     </div>
 
-
     <div class="github-badge-container">
-      <a href="https://github.com/SL-Mar" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/SL-Mar" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub repository">
         <img src="Docs/logoOS.png" alt="Open-source on GitHub" class="github-badge" />
       </a>
     </div>
   </main>
 
   <footer>
-    © 2025 SL Mar · QuantCoderFS R&D. Built with care, powered by AI.
+    © 2025 S.M. Laignel · QuantCoderFS R&amp;D. Built with care, powered by AI.
   </footer>
 </body>
 </html>
-
 

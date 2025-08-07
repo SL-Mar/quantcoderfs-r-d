@@ -29,7 +29,7 @@
     }
 
     h1 {
-      color: #58a6ff;
+      color: #ff7f00; /* Orange color for the title */
       font-size: 3rem;
       margin-bottom: 1rem;
       font-weight: bold;
@@ -86,6 +86,17 @@
       padding: 1rem;
     }
 
+    /* Smaller GitHub badge */
+    .github-badge {
+      width: 36px; /* Make it smaller by adjusting width */
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    .github-badge:hover {
+      transform: scale(1.1);
+    }
+
   </style>
 </head>
 
@@ -101,8 +112,14 @@
     <a href="https://quantcoderfs.substack.com/s/development-updates-and-technical" target="_blank">Learn more ➔</a>
   </div>
 
+  <div>
+    <a href="https://github.com/SL-Mar" target="_blank">
+      <img src="Docs/logoOS.png" alt="Open-source on GitHub" class="github-badge" />
+    </a>
+  </div>
+
   <footer>
-    © 2025 S.M. Laignel · QuantCoderFS R&D. Built with care, powered by AI.
+    © 2025 S.M. Laignel · SL Mar.
   </footer>
 </body>
 </html>

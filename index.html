@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>QuantCoderFS R&D – Quantitative Strategy Research</title>
   <meta name="description" content="QuantCoderFS R&D: AI-assisted development of systematic trading strategies." />
-  <meta property="og:title" content="QuantCoderFS R&D – Quantitative Strategy Research" />
   <link rel="icon" href="Docs/favicon.ico" />
 
   <style>
@@ -19,10 +18,7 @@
     :root {
       --bg: #0d1117;
       --surface: #1b222b;
-      --surface-alt: #21262d;
-      --border: #30363d;
       --text: #c9d1d9;
-      --muted: #8b949e;
       --blue: #58a6ff;
       --blue-accent: #3d8bfd;
       --green: #3fb950;
@@ -47,7 +43,7 @@
     }
 
     header {
-      background: var(--surface-alt);
+      background: var(--surface);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -59,8 +55,7 @@
       margin: 0 auto;
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      padding: 1rem 1rem;
+      padding: 1rem;
     }
 
     nav a {
@@ -73,12 +68,9 @@
       transition: background-color var(--transition), color var(--transition);
     }
 
-    nav a:hover,
-    nav a:focus-visible {
+    nav a:hover {
       background-color: var(--blue-accent);
       color: var(--bg);
-      outline-offset: 3px;
-      outline: 2px solid var(--blue-accent);
       text-decoration: none;
     }
 
@@ -86,116 +78,48 @@
       flex-grow: 1;
       max-width: var(--max-width);
       margin: 2rem auto 4rem;
-      padding: 0 1rem;
       text-align: center;
     }
 
     h1 {
       font-size: clamp(2.5rem, 5vw, 3rem);
       color: var(--blue);
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
       font-weight: 700;
-      line-height: 1.1;
-      text-align: center;
     }
 
     .subtitle {
       font-size: 1.15rem;
-      color: var(--muted);
+      color: var(--text);
       margin-bottom: 3rem;
-      line-height: 1.5;
-    }
-
-    .subtitle a {
-      color: var(--blue-accent);
-      text-decoration: none;
-      font-weight: 600;
-      border-bottom: 1px solid transparent;
-      transition: border-color var(--transition);
-    }
-
-    .subtitle a:hover,
-    .subtitle a:focus-visible {
-      border-color: var(--blue-accent);
-      text-decoration: none;
     }
 
     .card {
       background: var(--surface);
-      padding: 2rem 2rem 2.5rem;
-      border: 1px solid var(--border);
+      padding: 2rem;
+      border: 1px solid var(--surface);
       border-radius: var(--radius);
       max-width: 600px;
       margin: 0 auto 3rem;
-      text-align: left;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 6px var(--shadow-light);
       transition: transform var(--transition), box-shadow var(--transition);
-      display: flex;
-      flex-direction: column;
     }
 
-    .card:hover,
-    .card:focus-within {
-      transform: translateY(-6px) scale(1.03);
+    .card:hover {
+      transform: translateY(-6px);
       box-shadow: 0 8px 22px var(--shadow-light);
-      outline: none;
-      cursor: pointer;
     }
 
     .card h3 {
       font-size: 1.5rem;
       color: var(--blue);
       margin-bottom: 1rem;
-      font-weight: 700;
     }
 
     .card p {
       font-size: 1rem;
       color: var(--text);
       margin-bottom: 1.25rem;
-      line-height: 1.6;
-      flex-grow: 1;
-    }
-
-    .card .status {
-      font-size: 0.85rem;
-      color: var(--green);
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .card a {
-      font-weight: 600;
-      color: var(--blue-accent);
-      align-self: flex-start;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color var(--transition);
-    }
-
-    .card a:hover,
-    .card a:focus-visible {
-      border-color: var(--blue-accent);
-      text-decoration: none;
-    }
-
-    .github-badge-container {
-      display: flex;
-      justify-content: center;
-      margin: 3rem 0 2rem;
-    }
-
-    .github-badge {
-      height: 72px;
-      transition: transform 0.2s ease;
-    }
-
-    .github-badge:hover,
-    .github-badge:focus-visible {
-      transform: scale(1.07);
-      outline-offset: 4px;
-      outline: 2px solid var(--blue-accent);
-      cursor: pointer;
     }
 
     footer {
@@ -203,28 +127,16 @@
       padding: 2rem 1rem 3rem;
       text-align: center;
       font-size: 0.85rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-      user-select: none;
+      color: var(--text);
+      border-top: 1px solid var(--surface);
     }
 
-    /* Responsive tweaks */
     @media (max-width: 768px) {
       .card {
-        padding: 1.75rem 1.5rem 2rem;
+        padding: 1.5rem;
       }
-
       h1 {
         font-size: 2.25rem;
-      }
-
-      .subtitle {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-      }
-
-      .github-badge {
-        height: 60px;
       }
     }
 
@@ -233,18 +145,11 @@
         flex-direction: column;
         gap: 1.5rem;
       }
-
-      .card {
-        padding: 1.5rem 1.25rem 2rem;
-      }
-
       h1 {
         font-size: 2rem;
       }
-
       .subtitle {
-        font-size: 0.9rem;
-        margin-bottom: 1.5rem;
+        font-size: 1rem;
       }
     }
 
@@ -254,33 +159,24 @@
 <body>
   <header>
     <nav>
-      <a href="https://quantcoderfs.substack.com" target="_blank" rel="noopener noreferrer" aria-label="Follow QuantCoderFS strategy research on Substack">
-        Follow Quantitative Strategy Research on Substack
-      </a>
+      <a href="https://quantcoderfs.substack.com" target="_blank" rel="noopener noreferrer">Follow on Substack</a>
     </nav>
   </header>
 
   <main>
-    <h1>QuantCoderFS R&amp;D</h1>
+    <h1>QuantCoderFS R&D</h1>
     <p class="subtitle">
-      Dedicated to advancing systematic trading strategy research and development.<br />
-      AI-assisted transformation of academic finance research into actionable strategies.
-      <br />
+      AI-assisted research environment for developing systematic trading strategies.
     </p>
 
-    <section class="card" aria-labelledby="quantcoder-title" tabindex="0">
-      <h3 id="quantcoder-title">QuantCoderFS</h3>
-      <p class="status" aria-label="Release date">Active Development – 2025</p>
-      <p>
-        QuantCoderFS is a self-hosted AI-assisted research environment designed to automate the extraction of insights from quantitative finance papers and generate algorithmic strategies for platforms such as QuantConnect. It accelerates systematic strategy design while emphasizing transparency, robustness, and reproducibility.
-      </p>
-      <a href="https://quantcoderfs.substack.com/s/development-updates-and-technical" target="_blank" rel="noopener noreferrer" aria-label="Read QuantCoderFS technical updates on Substack">
-        Learn more on Substack ➔
-      </a>
+    <section class="card">
+      <h3>About QuantCoderFS</h3>
+      <p>QuantCoderFS is a self-hosted AI-assisted research environment designed to automate the extraction of insights from quantitative finance papers and generate algorithmic strategies. It accelerates systematic strategy design with a focus on transparency and reproducibility.</p>
+      <a href="https://quantcoderfs.substack.com/s/development-updates-and-technical" target="_blank" rel="noopener noreferrer">Learn more on Substack ➔</a>
     </section>
 
     <div class="github-badge-container">
-      <a href="https://github.com/SL-Mar" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub repository for QuantCoderFS">
+      <a href="https://github.com/SL-Mar" target="_blank" rel="noopener noreferrer">
         <img src="Docs/logoOS.png" alt="Open-source on GitHub" class="github-badge" />
       </a>
     </div>
@@ -291,5 +187,4 @@
   </footer>
 </body>
 </html>
-
 

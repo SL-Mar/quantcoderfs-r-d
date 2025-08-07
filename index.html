@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>QuantCoderFS R&D – AI Research Platform</title>
-  <meta name="description" content="QuantCoderFS R&D: LLM-powered equity research and systematic strategy automation." />
-  <meta property="og:title" content="QuantCoderFS R&D – AI Research Platform" />
+  <title>QuantCoderFS R&D – Quantitative Strategy Research</title>
+  <meta name="description" content="QuantCoderFS R&D: AI-assisted development of systematic trading strategies." />
+  <meta property="og:title" content="QuantCoderFS R&D – Quantitative Strategy Research" />
   <link rel="icon" href="Docs/favicon.ico" />
 
   <style>
@@ -70,69 +70,56 @@
       max-width: 1100px;
       margin: auto;
       padding: 3rem 1rem 4rem;
+      text-align: center;
     }
 
     h1 {
       font-size: clamp(2.5rem, 5vw, 3rem);
-      text-align: center;
       color: var(--blue);
       margin-bottom: 0.5rem;
     }
 
     .subtitle {
-      text-align: center;
       font-size: 1.15rem;
       color: var(--muted);
       margin-bottom: 3rem;
       line-height: 1.4;
     }
 
-    .grid-columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
     .card {
       background: var(--surface);
-      padding: 1.75rem 1.5rem;
+      padding: 2rem 1.5rem;
       border: 1px solid var(--border);
       border-radius: 10px;
-      text-align: center;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .card img {
-      margin-bottom: 1rem;
-      align-self: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      text-align: left;
     }
 
     .card h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       color: var(--blue);
+      margin-bottom: 1rem;
     }
 
     .card p {
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-      color: var(--muted);
-      flex-grow: 1;
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
     }
 
     .card .status {
       font-size: 0.85rem;
       color: var(--green);
-      margin-bottom: 1rem;
       font-weight: 600;
+      margin-bottom: 1rem;
     }
 
-    .card:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 6px 20px var(--shadow);
+    .card a {
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 0.5rem;
     }
 
     .github-badge-container {
@@ -151,7 +138,7 @@
     }
 
     footer {
-      margin-top: 4rem;
+      margin-top: auto;
       padding: 2rem 1rem 3rem;
       text-align: center;
       font-size: 0.85rem;
@@ -168,46 +155,35 @@
 <body>
   <header>
     <nav>
-      <a href="https://quantcoderfs.substack.com/p/chat-with-fundamentals-video-demonstration" target="_blank" rel="noopener noreferrer">
-        Chat with Fundamentals Demo Video
-      </a>
+      <a href="https://quantcoderfs.substack.com" target="_blank" rel="noopener noreferrer">Follow Quantitative Strategy Research on Substack</a>
     </nav>
   </header>
 
   <main>
     <h1>QuantCoderFS R&amp;D</h1>
     <p class="subtitle">
-      Quantitative analysis tools powered by custom LLM agents.<br />
-      Explore development and strategy research on <a href="https://quantcoderfs.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>.
+      Dedicated to advancing systematic trading strategy research and development.<br />
+      AI-assisted transformation of academic finance research into actionable strategies.
     </p>
 
-    <div class="grid-columns">
-      <article class="card chat" aria-labelledby="chat-title">
-        <img src="Docs/logocwf.png" alt="Chat with Fundamentals Logo" width="80" height="80" />
-        <h3 id="chat-title">Chat with Fundamentals</h3>
-        <p class="status" aria-label="Release date">Released – April 2025</p>
-        <p>LLM-powered equity research leveraging end-of-day, fundamental, and news data from EODHD APIs. Open-source and local-first approach.</p>
-        <a href="https://quantcoderfs.substack.com/s/chat-with-fundamentals" target="_blank" rel="noopener noreferrer">Read on Substack ➔</a>
-      </article>
-
-      <article class="card qc" aria-labelledby="qc-title">
-        <img src="Docs/logo.png" alt="QuantCoderFS Logo" width="80" height="80" />
-        <h3 id="qc-title">QuantCoderFS</h3>
-        <p class="status" aria-label="Release date">Released – May 2025</p>
-        <p>Transforms quantitative finance papers into executable QuantConnect strategies via a modular CrewAI coding engine, accelerating strategy design.</p>
-        <a href="https://quantcoderfs.substack.com/s/development-updates-and-technical" target="_blank" rel="noopener noreferrer">Read on Substack ➔</a>
-      </article>
-    </div>
+    <section class="card" aria-labelledby="quantcoder-title">
+      <h3 id="quantcoder-title">QuantCoderFS</h3>
+      <p class="status" aria-label="Release date">Active Development – 2025</p>
+      <p>
+        QuantCoderFS is a local-first AI-assisted research environment designed to automate the extraction of insights from quantitative finance papers and generate algorithmic strategies for platforms such as QuantConnect. It accelerates systematic strategy design while emphasizing transparency, robustness, and reproducibility.
+      </p>
+      <a href="https://quantcoderfs.substack.com/s/development-updates-and-technical" target="_blank" rel="noopener noreferrer">Learn more on Substack ➔</a>
+    </section>
 
     <div class="github-badge-container">
-      <a href="https://github.com/SL-Mar" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub repository">
+      <a href="https://github.com/SL-Mar" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub repository for QuantCoderFS">
         <img src="Docs/logoOS.png" alt="Open-source on GitHub" class="github-badge" />
       </a>
     </div>
   </main>
 
   <footer>
-    © 2025 S.M. Laignel · QuantCoderFS R&amp;D. Built with care, powered by AI.
+    © 2025 S.M. Laignel · QuantCoderFS R&D. Built with care, powered by AI.
   </footer>
 </body>
 </html>

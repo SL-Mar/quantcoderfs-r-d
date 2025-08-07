@@ -18,13 +18,13 @@
 
     :root {
       --bg: #0d1117;
-      --surface: #1b222b; /* slightly lighter for cards */
+      --surface: #1b222b;
       --surface-alt: #21262d;
       --border: #30363d;
       --text: #c9d1d9;
       --muted: #8b949e;
       --blue: #58a6ff;
-      --blue-accent: #3d8bfd; /* brighter blue for links */
+      --blue-accent: #3d8bfd;
       --green: #3fb950;
       --shadow-light: rgba(0, 0, 0, 0.3);
       --shadow: 0 4px 12px var(--shadow-light);
@@ -208,16 +208,42 @@
     }
 
     /* Responsive tweaks */
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       .card {
-        padding: 1.5rem 1.25rem 2rem;
+        padding: 1.75rem 1.5rem 2rem;
       }
+
       h1 {
         font-size: 2.25rem;
       }
+
       .subtitle {
         font-size: 1rem;
         margin-bottom: 2rem;
+      }
+
+      .github-badge {
+        height: 60px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .card {
+        padding: 1.5rem 1.25rem 2rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
       }
     }
 
@@ -265,4 +291,5 @@
   </footer>
 </body>
 </html>
+
 

@@ -28,12 +28,13 @@
     <style>
       /* =========  CSS Custom Properties  ========= */
       :root {
+        /* Core palette based on reference screenshot */
         --color-bg: #0d1117;
-        --color-surface: #1b222b;
+        --color-surface: #161b22;
         --color-text: #c9d1d9;
         --color-muted: #8b949e;
-        --color-accent: #ff7f00;
-        --color-link: #58a6ff;
+        --color-title: #e6edf3; /* nearly‑white text as in screenshot */
+        --color-link: #58a6ff;  /* bright blue for interactive elements */
         --color-link-hover: #3d8bfd;
         --radius-lg: 16px;
         --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -47,6 +48,7 @@
           --color-surface: #ffffff;
           --color-text: #17202a;
           --color-muted: #555;
+          --color-title: #1c2431;
           --color-link-hover: #1a73e8;
           --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
           --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -99,9 +101,10 @@
         }
       }
 
+      /* =========  Headings  ========= */
       h1 {
         font-size: clamp(2.25rem, 5vw + 1rem, 3.5rem);
-        color: var(--color-accent);
+        color: var(--color-title);
         margin-bottom: 1rem;
         font-weight: 700;
         letter-spacing: -0.5px;
@@ -147,7 +150,7 @@
 
       .card h2 {
         font-size: 1.75rem;
-        color: var(--color-accent);
+        color: var(--color-title);
         margin-bottom: 1rem;
       }
 
@@ -251,7 +254,9 @@
     </div>
 
     <footer>
-      © 2025 S.M. Laignel · QuantCoderFS&nbsp;R&amp;D. SL Mar.
+      © 2025 S.M. Laignel · QuantCoderFS&nbsp;R&D. Built with care, powered by
+      AI.
     </footer>
   </body>
 </html>
+

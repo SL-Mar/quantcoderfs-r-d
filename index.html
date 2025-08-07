@@ -9,6 +9,7 @@
   <link rel="icon" href="Docs/favicon.ico" />
 
   <style>
+    /* Reset and box sizing */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -17,25 +18,32 @@
 
     :root {
       --bg: #0d1117;
-      --surface: #161b22;
+      --surface: #1b222b; /* slightly lighter for cards */
       --surface-alt: #21262d;
       --border: #30363d;
       --text: #c9d1d9;
       --muted: #8b949e;
       --blue: #58a6ff;
+      --blue-accent: #3d8bfd; /* brighter blue for links */
       --green: #3fb950;
-      --shadow: 0 4px 12px rgba(0,0,0,.2);
+      --shadow-light: rgba(0, 0, 0, 0.3);
+      --shadow: 0 4px 12px var(--shadow-light);
+      --radius: 10px;
+      --transition: 0.3s ease;
+      --max-width: 1100px;
+      --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--font-family);
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      font-size: 1rem;
     }
 
     header {
@@ -47,29 +55,38 @@
     }
 
     nav {
-      max-width: 1100px;
-      margin: auto;
+      max-width: var(--max-width);
+      margin: 0 auto;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 0.75rem 2rem;
-      padding: 1rem;
+      gap: 2rem;
+      padding: 1rem 1rem;
     }
 
-    a {
-      color: var(--blue);
+    nav a {
+      color: var(--blue-accent);
+      font-weight: 600;
+      font-size: 1rem;
       text-decoration: none;
-      transition: color 0.2s ease;
+      padding: 0.35rem 0.75rem;
+      border-radius: 5px;
+      transition: background-color var(--transition), color var(--transition);
     }
-    a:hover, a:focus-visible {
-      color: var(--green);
+
+    nav a:hover,
+    nav a:focus-visible {
+      background-color: var(--blue-accent);
+      color: var(--bg);
+      outline-offset: 3px;
+      outline: 2px solid var(--blue-accent);
+      text-decoration: none;
     }
 
     main {
       flex-grow: 1;
-      max-width: 1100px;
-      margin: auto;
-      padding: 3rem 1rem 4rem;
+      max-width: var(--max-width);
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
       text-align: center;
     }
 
@@ -77,36 +94,66 @@
       font-size: clamp(2.5rem, 5vw, 3rem);
       color: var(--blue);
       margin-bottom: 0.5rem;
+      font-weight: 700;
+      line-height: 1.1;
     }
 
     .subtitle {
       font-size: 1.15rem;
       color: var(--muted);
       margin-bottom: 3rem;
-      line-height: 1.4;
+      line-height: 1.5;
+    }
+
+    .subtitle a {
+      color: var(--blue-accent);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition);
+    }
+
+    .subtitle a:hover,
+    .subtitle a:focus-visible {
+      border-color: var(--blue-accent);
+      text-decoration: none;
     }
 
     .card {
       background: var(--surface);
-      padding: 2rem 1.5rem;
+      padding: 2rem 2rem 2.5rem;
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: var(--radius);
       max-width: 600px;
       margin: 0 auto 3rem;
       text-align: left;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 22px var(--shadow-light);
+      outline: none;
+      cursor: pointer;
     }
 
     .card h3 {
       font-size: 1.5rem;
       color: var(--blue);
       margin-bottom: 1rem;
+      font-weight: 700;
     }
 
     .card p {
       font-size: 1rem;
       color: var(--text);
       margin-bottom: 1.25rem;
-      line-height: 1.5;
+      line-height: 1.6;
+      flex-grow: 1;
     }
 
     .card .status {
@@ -118,8 +165,17 @@
 
     .card a {
       font-weight: 600;
-      display: inline-block;
-      margin-top: 0.5rem;
+      color: var(--blue-accent);
+      align-self: flex-start;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition);
+    }
+
+    .card a:hover,
+    .card a:focus-visible {
+      border-color: var(--blue-accent);
+      text-decoration: none;
     }
 
     .github-badge-container {
@@ -133,8 +189,12 @@
       transition: transform 0.2s ease;
     }
 
-    .github-badge:hover {
-      transform: scale(1.05);
+    .github-badge:hover,
+    .github-badge:focus-visible {
+      transform: scale(1.07);
+      outline-offset: 4px;
+      outline: 2px solid var(--blue-accent);
+      cursor: pointer;
     }
 
     footer {
@@ -144,18 +204,32 @@
       font-size: 0.85rem;
       color: var(--muted);
       border-top: 1px solid var(--border);
+      user-select: none;
     }
 
-    html {
-      scroll-behavior: smooth;
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      .card {
+        padding: 1.5rem 1.25rem 2rem;
+      }
+      h1 {
+        font-size: 2.25rem;
+      }
+      .subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
     }
+
   </style>
 </head>
 
 <body>
   <header>
     <nav>
-      <a href="https://quantcoderfs.substack.com" target="_blank" rel="noopener noreferrer">Follow Quantitative Strategy Research on Substack</a>
+      <a href="https://quantcoderfs.substack.com" target="_blank" rel="noopener noreferrer" aria-label="Follow QuantCoderFS strategy research on Substack">
+        Follow Quantitative Strategy Research on Substack
+      </a>
     </nav>
   </header>
 
@@ -164,15 +238,19 @@
     <p class="subtitle">
       Dedicated to advancing systematic trading strategy research and development.<br />
       AI-assisted transformation of academic finance research into actionable strategies.
+      <br />
+      Visit the <a href="https://quantcoderfs.substack.com" target="_blank" rel="noopener noreferrer">QuantCoderFS Substack</a> for in-depth insights.
     </p>
 
-    <section class="card" aria-labelledby="quantcoder-title">
+    <section class="card" aria-labelledby="quantcoder-title" tabindex="0">
       <h3 id="quantcoder-title">QuantCoderFS</h3>
       <p class="status" aria-label="Release date">Active Development – 2025</p>
       <p>
         QuantCoderFS is a local-first AI-assisted research environment designed to automate the extraction of insights from quantitative finance papers and generate algorithmic strategies for platforms such as QuantConnect. It accelerates systematic strategy design while emphasizing transparency, robustness, and reproducibility.
       </p>
-      <a href="https://quantcoderfs.substack.com/s/development-updates-and-technical" target="_blank" rel="noopener noreferrer">Learn more on Substack ➔</a>
+      <a href="https://quantcoderfs.substack.com/s/development-updates-and-technical" target="_blank" rel="noopener noreferrer" aria-label="Read QuantCoderFS technical updates on Substack">
+        Learn more on Substack ➔
+      </a>
     </section>
 
     <div class="github-badge-container">
